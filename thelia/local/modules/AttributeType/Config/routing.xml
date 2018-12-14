@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="attribute_type_module_config" path="/admin/module/AttributeType">
+        <default key="_controller">AttributeType\Controller\AttributeTypeController::viewAllAction</default>
+    </route>
+
+    <route id="attribute_type_view_all" path="/admin/attribute-type" methods="GET">
+        <default key="_controller">AttributeType\Controller\AttributeTypeController::viewAllAction</default>
+    </route>
+
+    <route id="attribute_type_create" path="/admin/attribute-type" methods="POST">
+        <default key="_controller">AttributeType\Controller\AttributeTypeController::createAction</default>
+    </route>
+
+    <route id="attribute_type_view" path="/admin/attribute-type/{id}" methods="GET">
+        <default key="_controller">AttributeType\Controller\AttributeTypeController::viewAction</default>
+        <requirement key="id">\d+</requirement>
+    </route>
+
+    <route id="attribute_type_copy" path="/admin/attribute-type/{id}/{method}" methods="GET">
+        <default key="_controller">AttributeType\Controller\AttributeTypeController::copyAction</default>
+        <requirement key="id">\d+</requirement>
+        <requirement key="method">_copy</requirement>
+    </route>
+
+    <route id="attribute_type_update" path="/admin/attribute-type/{id}" methods="POST">
+        <default key="_controller">AttributeType\Controller\AttributeTypeController::updateAction</default>
+        <requirement key="id">\d+</requirement>
+    </route>
+
+    <route id="attribute_type_delete" path="/admin/attribute-type/{id}/{method}" methods="POST">
+        <default key="_controller">AttributeType\Controller\AttributeTypeController::deleteAction</default>
+        <requirement key="id">\d+</requirement>
+        <requirement key="method">_delete</requirement>
+    </route>
+
+    <route id="attribute_type_associate" path="/admin/attribute-type/{attribute_type_id}/associate/{attribute_id}" methods="POST">
+        <default key="_controller">AttributeType\Controller\AttributeTypeAttributeController::associateAction</default>
+        <requirement key="attribute_type_id">\d+</requirement>
+        <requirement key="attribute_id">\d+</requirement>
+    </route>
+
+    <route id="attribute_type_dissociate" path="/admin/attribute-type/{attribute_type_id}/dissociate/{attribute_id}" methods="POST">
+        <default key="_controller">AttributeType\Controller\AttributeTypeAttributeController::dissociateAction</default>
+        <requirement key="attribute_type_id">\d+</requirement>
+        <requirement key="attribute_id">\d+</requirement>
+    </route>
+
+    <route id="attribute_type_meta_update" path="/admin/attribute/{attribute_id}/attribute-av/meta" methods="POST">
+        <default key="_controller">AttributeType\Controller\AttributeTypeAttributeAvController::updateMetaAction</default>
+        <requirement key="attribute_id">\d+</requirement>
+    </route>
+
+</routes>

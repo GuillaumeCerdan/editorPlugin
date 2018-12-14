@@ -1,0 +1,129 @@
+{$prefix = 'aamu-'}
+
+{form name="attribute_type_av_meta.update"}
+  <form action="{url path="/admin/attribute/{$attribute_id}/attribute-av/meta"}" method="post" class="js-form-meta-update">
+    {form_hidden_fields form=$form}
+
+    {form_field form=$form field='success_url'}
+      <input type="hidden" name="{$name}" value="{url path="/admin/configuration/attributes/update" attribute_id=$attribute_id}" />
+    {/form_field}
+
+    {form_field form=$form field='attribute_id'}
+      <input type="hidden" name="{$name}" value="{$attribute_id}" />
+    {/form_field}
+
+    {if $form_error && $form_error_message}
+      <div class="alert alert-danger">{$form_error_message}</div>
+    {/if}
+
+    <div role="tabpanel">
+      <ul class="nav nav-tabs" role="tablist">
+        {loop type="lang" name="lang"}
+          <li role="presentation" {if $ID == $edit_language_id}class="active"{/if}>
+            <a href="#attribute-type-{$LOCALE}" aria-controls="settings" role="tab" data-toggle="tab">
+              <img src="{image file="assets/img/flags/$CODE.png"}" alt="{$TITLE}" />
+            </a>
+          </li>
+        {/loop}
+      </ul>
+
+      <div class="tab-content">
+        <br/>
+        {loop type="lang" name="lang"}
+          {$lang_id = $ID}
+          <div role="tabpanel" class="tab-pane {if $ID == $edit_language_id}active{/if}" id="attribute-type-{$LOCALE}">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>
+                  {intl l="ID"}
+                </th>
+                <th>
+                  {intl l="Value"}
+                </th>
+                {loop type="attribute_type" name="attribute_type" attribute_id=$attribute_id}
+                {if $HAS_ATTRIBUTE_AV_VALUE}
+                  <th>
+                    <a type="button" href="#" class="js-popover" data-container="body" data-placement="top"
+                       data-content="{$DESCRIPTION}
+                                            <br/><strong>{intl l="Attribute av multilingual value" d="attributetype.bo.default"} : {if $IS_MULTILINGUAL_ATTRIBUTE_AV_VALUE}{intl l="Yes"}{else}{intl l="No"}{/if}</strong>"
+                       data-title="({$SLUG}) {$TITLE}" data-html="true" data-trigger="hover">
+                      {$SLUG}
+                    </a>
+                  </th>
+                {/if}
+                {/loop}
+              </tr>
+              </thead>
+              <tbody>
+              {$attributeAvTitle=[]}
+              {loop type="attribute_availability" name="attribute_availability" attribute=$attribute_id lang=$lang_id}
+              {$attributeAvTitle[$ID] = $TITLE}
+              {/loop}
+
+              {foreach from=$form_meta_data.attribute_av key=attribute_av_id item=foo}
+                <tr>
+                  <td>
+                    {$attribute_av_id}
+                  </td>
+                  <td>
+                    {$attributeAvTitle[$attribute_av_id]}
+                  </td>
+                  {loop type="attribute_type" name="attribute_type_input" attribute_id=$attribute_id lang=$lang_id}
+                  {if $HAS_ATTRIBUTE_AV_VALUE}
+                    <td>
+                      <div class="input-group {if $error}has-error{/if}">
+                        {form_field form=$form field='attribute_av' value_key=$ID}
+                          {if $INPUT_TYPE == "textarea"}
+                          <textarea
+                              class="form-control {$CSS_CLASS}"
+                              name="attribute_type_av_meta-update[attribute_av][{$attribute_av_id}][lang][{$lang_id}][attribute_type][{$ID}]"
+                              data-connector="{$SLUG}-{$attribute_av_id}"
+                              data-replicate={if !$IS_MULTILINGUAL_ATTRIBUTE_AV_VALUE}true{else}false{/if}
+                          >{$data[$attribute_av_id]['lang'][$lang_id]['attribute_type'][$ID] nofilter}</textarea>
+                          {elseif $INPUT_TYPE == "boolean"}
+                            <select
+                                    class="form-control {$CSS_CLASS}"
+                                    name="attribute_type_av_meta-update[attribute_av][{$attribute_av_id}][lang][{$lang_id}][attribute_type][{$ID}]"
+                                    data-connector="{$SLUG}-{$attribute_av_id}"
+                                    data-replicate={if !$IS_MULTILINGUAL_ATTRIBUTE_AV_VALUE}true{else}false{/if}
+                                    >
+                              <option value="0" {if !{$data[$attribute_av_id]['lang'][$lang_id]['attribute_type'][$ID]}}selected{/if}>{intl l="No"}</option>
+                              <option value="1" {if {$data[$attribute_av_id]['lang'][$lang_id]['attribute_type'][$ID]}}selected{/if}>{intl l="Yes"}</option>
+                            </select>
+                          {else}
+                          <input type="{$INPUT_TYPE}"
+                                 {if $PATTERN}pattern="{$PATTERN}"{/if}
+                                 class="{if $INPUT_TYPE != 'color' && $INPUT_TYPE != 'range'}form-control {/if}{$CSS_CLASS}"
+                                  {if $INPUT_TYPE == 'number' || $INPUT_TYPE == 'range'}
+                                    {if $MIN}min="{$MIN}"{else}min="0"{/if}
+                                    {if $MAX}max="{$MAX}"{/if}
+                                    {if $STEP}step="{$STEP}"{else}step="0.000001"{/if}
+                                  {/if}
+                                 name="attribute_type_av_meta-update[attribute_av][{$attribute_av_id}][lang][{$lang_id}][attribute_type][{$ID}]"
+                                 value="{$data[$attribute_av_id]['lang'][$lang_id]['attribute_type'][$ID]}"
+                                 data-connector="{$SLUG}-{$attribute_av_id}"
+                                 data-replicate={if !$IS_MULTILINGUAL_ATTRIBUTE_AV_VALUE}true{else}false{/if}
+                                  />
+                          {/if}
+                        {/form_field}
+                      </div>
+                    </td>
+                  {/if}
+                  {/loop}
+                </tr>
+              {/foreach}
+              </tbody>
+            </table>
+          </div>
+        {/loop}
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-success">
+        <span class="glyphicon glyphicon-floppy-disk"></span>
+        {intl l="Update action" d="attributetype.bo.default"}
+      </button>
+    </div>
+  </form>
+{/form}

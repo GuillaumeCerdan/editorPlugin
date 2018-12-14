@@ -1,0 +1,191 @@
+{extends file="admin-layout.tpl"}
+
+{block name="no-return-functions"}
+  {$admin_current_location = 'modules'}
+{/block}
+
+{block name="page-title"}{intl l='Modules'}{/block}
+
+{block name="check-resource"}module.AttributeType{/block}
+{block name="check-access"}view{/block}
+
+{block name="main-content"}
+  <div class="edit-module">
+    <div id="wrapper" class="container">
+      <ul class="breadcrumb">
+        <li><a href="{url path='/admin/home'}">{intl l="Home"}</a></li>
+        <li><a href="{url path='/admin/configuration'}">{intl l="Configuration"}</a></li>
+        <li>{intl l="Attributes types" d="attributetype.bo.default"}</li>
+      </ul>
+
+      {hook name="attribute-type.configuration-top"}
+
+      <div class="row" id="module-attribute-type">
+        <div class="col-md-12 general-block-decorator">
+            <button class="btn btn-default pull-right js-popover"
+                    title="{intl l="Help !!!" d="attributetype.bo.default"}"
+                    data-placement="left"
+                    data-html="true"
+                    data-content="{intl l="To ask for help" d="attributetype.bo.default"}
+                    </br> <a target='_blank' href='https://github.com/thelia-modules/AttributeType/issues'>Github</a>
+                    , <a target='_blank' href='http://thelia.net/forum'>Thelia forum</a>
+                    , <a target='_blank' href='{intl l="http://thelia-school.com/create-types-of-features-and-attributes.html" d="attributetype.bo.default"}'>{intl l="Tutorial" d="attributetype.bo.default"}</a>
+                    "
+                    >
+              <span class="glyphicon glyphicon-info-sign"></span>
+            </button>
+            <div class="title title-without-tabs">
+              {intl l="Attributes types" d="attributetype.bo.default"}
+            </div>
+            <div class="form-container">
+              <table class="table table-striped">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col width="30%" />
+                  <col width="25%" />
+                  <col width="35%" />
+                </colgroup>
+                <thead>
+                <tr>
+                  <th>
+                    {intl l="ID"}
+                  </th>
+                  <th>
+                    {intl l="Slug" d="attributetype.bo.default"}
+                  </th>
+                  <th>
+                    {intl l="Title"}
+                  </th>
+                  <th>
+                    {intl l="Used by" d="attributetype.bo.default"}
+                  </th>
+                  <th>
+                    {intl l="Action" d="attributetype.bo.default"}
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                {loop type="attribute_type" name="attribute_type"}
+                  <tr>
+                    <td>
+                      {$ID}
+                    </td>
+                    <td>
+                      {$SLUG}
+                    </td>
+                    <td>
+                      <strong>{$TITLE}</strong>
+                      <br/>
+                      {$DESCRIPTION nofilter}
+                    </td>
+                    <td>
+                      {ifloop rel="attribute_attribute_type"}
+                      {loop type="attribute_extend_attribute_type" name="attribute_attribute_type" attribute_type_id=$ID}
+                        <a href="{url path="/admin/configuration/attributes/update" attribute_id=$ID}">{$TITLE}</a>
+                        <br/>
+                      {/loop}
+                      {/ifloop}
+                      {elseloop rel="attribute_attribute_type"}
+                      {intl l="No" d="attributetype.bo.default"}
+                      {/elseloop}
+                    </td>
+                    <td>
+                      {hook name="attribute-type.list-action" attribute_type_id=$ID}
+                      <button class="btn btn-primary btn-sm js-action-copy" data-action="{url path="/admin/attribute-type/$ID/_copy"}">
+                        <span class="glyphicon glyphicon-file"></span>
+                        {intl l="Copy action" d="attributetype.bo.default"}
+                      </button>
+                      <button class="btn btn-info btn-sm js-action-edit" data-action="{url path="/admin/attribute-type/$ID"}">
+                        <span class="glyphicon glyphicon-cog"></span>
+                        {intl l="Edit action" d="attributetype.bo.default"}
+                      </button>
+                      <button class="btn btn-danger btn-sm js-action-delete" data-action="{url path="/admin/attribute-type/$ID/_delete"}">
+                        <span class="glyphicon glyphicon-trash"></span>
+                        {intl l="Delete action" d="attributetype.bo.default"}
+                      </button>
+                    </td>
+                  </tr>
+                {/loop}
+                {elseloop rel="attribute_type"}
+                  <tr>
+                    <td colspan="10">
+                      <div class="alert alert-info">
+                        {intl l="No attribute type in database" d="attributetype.bo.default"}
+                      </div>
+                    </td>
+                  </tr>
+                {/elseloop}
+                </tbody>
+                <tfoot>
+                <tr>
+                  <td colspan="10" class="text-center">
+                    <button type="button" class="btn btn-success js-action-create">
+                      <span class="glyphicon glyphicon-plus"></span>
+                      {intl l="Create action" d="attributetype.bo.default"}
+                    </button>
+                  </td>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+        </div>
+
+        {include file="attribute-type/include/form-create.html"}
+        {include file="attribute-type/include/form-update.html"}
+
+        <!-- Modal -->
+        {form name="attribute_type.delete"}
+          <form method="POST" class="js-form-delete" action="">
+            {form_hidden_fields form=$form}
+
+            {form_field form=$form field='success_url'}
+              <input type="hidden" name="{$name}" value="{url path='/admin/attribute-type'}" />
+            {/form_field}
+
+            <div class="modal fade js-modal-delete {if $form_error}modal-force-show{/if}" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong class="modal-title text-uppercase">{intl l="Delete attribute type" d="attributetype.bo.default"}</strong>
+                  </div>
+                  <div class="modal-body">
+                    {if $form_error}
+                      <div class="alert alert-danger">{$form_error_message}</div>
+                    {/if}
+                    {intl l="Are you sure you want to delete this attribute type ?" d="attributetype.bo.default"}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                      <span class="glyphicon glyphicon-remove"></span>
+                      {intl l="Close action" d="attributetype.bo.default"}
+                    </button>
+                    <button type="submit" class="btn btn-danger">
+                      <span class="glyphicon glyphicon-ok"></span>
+                      {intl l="Delete action" d="attributetype.bo.default"}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        {/form}
+      </div>
+
+      {hook name="attribute-type.configuration-bottom"}
+
+      {hook name="module.configuration" location="module_configuration"  modulecode="AttributeType"}
+
+    </div>
+  </div>
+{/block}
+{block name="javascript-initialization"}
+  {include file="attribute-type/configuration-js.html"}
+{/block}
+
+{block name="javascript-last-call"}
+  {hook name="module.config-js" location="module-config-js" modulecode="AttributeType"}
+
+  {hook name="wysiwyg.js" location="wysiwyg-module-config-js" }
+{/block}

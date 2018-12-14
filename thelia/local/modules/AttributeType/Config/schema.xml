@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database defaultIdMethod="native" name="thelia"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../core/vendor/propel/propel/resources/xsd/database.xsd" >
+
+    <table name="attribute_type" namespace="AttributeType\Model">
+        <column autoIncrement="true" name="id" primaryKey="true" required="true" type="INTEGER" />
+        <column name="slug" size="50" type="VARCHAR" />
+        <column name="has_attribute_av_value" type="TINYINT" default="0" />
+        <column name="is_multilingual_attribute_av_value" type="TINYINT" default="0" />
+        <column name="pattern" size="255" type="VARCHAR" />
+        <column name="css_class" size="50" type="VARCHAR" />
+        <column name="input_type" size="25" type="VARCHAR" />
+        <column name="max" type="FLOAT" />
+        <column name="min" type="FLOAT" />
+        <column name="step" type="FLOAT" />
+        <column name="title" size="255" type="VARCHAR" />
+        <column name="description" type="CLOB" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="title, description" />
+        </behavior>
+
+        <unique name="slug_unique">
+            <unique-column name="slug" />
+        </unique>
+
+        <behavior name="validate">
+            <parameter name="slugRule" value="{column: slug, validator: Regex, options: {pattern: &quot;/[a-z][a-z_0-9]{3,50}/&quot;}}" />
+        </behavior>
+
+        <behavior name="timestampable" />
+    </table>
+
+    <table name="attribute_attribute_type" namespace="AttributeType\Model">
+        <column autoIncrement="true" name="id" primaryKey="true" required="true" type="INTEGER" />
+        <column name="attribute_id" required="true" type="INTEGER" />
+        <column name="attribute_type_id" required="true" type="INTEGER" />
+
+        <foreign-key foreignTable="attribute" name="fk_attribute_attribute_type_attribute_id" onDelete="CASCADE" onUpdate="RESTRICT">
+            <reference foreign="id" local="attribute_id" />
+        </foreign-key>
+
+        <foreign-key foreignTable="attribute_type" name="fk_attribute_attribute_type_attribute_type_id" onDelete="CASCADE" onUpdate="RESTRICT">
+            <reference foreign="id" local="attribute_type_id" />
+        </foreign-key>
+
+        <unique name="attribute_attribute_type_unique">
+            <unique-column name="attribute_id" />
+            <unique-column name="attribute_type_id" />
+        </unique>
+    </table>
+
+    <table name="attribute_type_av_meta" namespace="AttributeType\Model">
+        <column autoIncrement="true" name="id" required="true" type="INTEGER" primaryKey="true" />
+        <column name="attribute_av_id" required="true" type="INTEGER" />
+        <column name="attribute_attribute_type_id" required="true" type="INTEGER" />
+        <column name="locale" size="5" required="true" type="VARCHAR" default="en_US" />
+        <column name="value" size="255" type="VARCHAR" />
+
+        <foreign-key foreignTable="attribute_av" name="fk_attribute_av_meta_attribute_av_id" onDelete="CASCADE">
+            <reference foreign="id" local="attribute_av_id" />
+        </foreign-key>
+
+        <foreign-key foreignTable="attribute_attribute_type" name="fk_attribute_av_meta_attribute_attribute_type_id" onDelete="CASCADE">
+            <reference foreign="id" local="attribute_attribute_type_id" />
+        </foreign-key>
+
+        <unique name="attribute_type_av_meta_unique">
+            <unique-column name="attribute_av_id" />
+            <unique-column name="attribute_attribute_type_id" />
+            <unique-column name="locale" />
+        </unique>
+
+        <behavior name="timestampable" />
+    </table>
+
+    <external-schema filename="local/config/schema.xml" referenceOnly="true" />
+</database>

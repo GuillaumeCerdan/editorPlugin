@@ -1,0 +1,30 @@
+{loop name="menu-auth-intellij" type="auth" role="ADMIN" resource="admin.intellij" access="VIEW"}
+{ifhook rel="main.top-menu-intellij"}
+    {hookblock name="main.top-menu-intellij" fields="id,class,url,title"}
+        <li class="{if $admin_current_location == 'intellij'}active{/if}" id="config_menu">
+            <a title="IntelliJ" href="#collapse-intellij" {if $admin_current_location == 'intellij'}class="open"{/if}>
+                <span class="icon-tools"></span>
+                <span class="item-text">IntelliJ<span class="caret"></span></span>
+            </a>
+
+            <ul id="collapse-intellij" class="collapse {if $admin_current_location == 'intellij'}in{/if}" role="menu">
+                {forhook rel="main.top-menu-intellij"}
+                    <li role="menuitem">
+                        <a {if $id}id="{$id}" {/if} class="{$class}" data-target="{$url}" href="{$url}">
+                            {$title}
+                        </a>
+                    </li>
+                {/forhook}
+            </ul>
+        </li>
+    {/hookblock}
+{/ifhook}
+{elsehook rel="main.top-menu-intellij"}
+    <li class="{if $admin_current_location == 'intellij'}active{/if}" id="config_menu">
+        <a title="IntelliJ" href="{url path='/admin/intellij'}">
+            <span class="icon-tools"></span>
+            <span class="item-text">IntelliJ</span>
+        </a>
+    </li>
+{/elsehook}
+{/loop}

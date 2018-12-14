@@ -1,0 +1,54 @@
+<script src="js/ace.js"></script>
+<script src="js/ext-static_highlight.js"></script>
+
+<pre id="ace_editor_demo" style="opacity:0">/**
+    * In fact, you're looking at ACE right now. Go ahead and play with it!
+    *
+    * We are currently showing off the JavaScript mode. ACE has support for 45
+    * language modes and 24 color themes!
+    */
+   
+   function add(x, y) {
+       var resultString = "Hello, ACE! The result of your math is: ";
+       var result = x + y;
+       return resultString + result;
+   }
+   
+   var addResult = add(3, 2);
+   console.log(addResult);
+   </pre>
+
+   <script>
+        var editor;
+        editor = ace.edit("ace_editor_demo");
+        editor.container.style.opacity = "";
+        editor.setOptions({
+            maxLines: 30,
+            mode: "ace/mode/javascript",
+            autoScrollEditorIntoView: true,
+            theme: "ace/theme/monokai"
+        });
+
+
+        ace.config.loadModule("ace/ext/emmet", function() {
+            ace.require("ace/lib/net").loadScript("https://cloud9ide.github.io/emmet-core/emmet.js", function() {
+                editor.setOption("enableEmmet", true);
+            });
+        });
+        
+        ace.config.loadModule("ace/ext/language_tools", function() {
+            editor.setOptions({
+                enableSnippets: true,
+                enableBasicAutocompletion: true
+            });
+        });
+
+        editor.commands.addCommand({
+            name: 'saveCOmmand',
+            bindKey: {win: 'Ctrl-S',  mac: 'Command-S'},
+            exec: function(editor) {
+                console.log("Save !");
+            },
+            readOnly: false // false if this command should not apply in readOnly mode
+        });
+   </script>

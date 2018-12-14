@@ -1,0 +1,144 @@
+{loop type="auth" name="can_change" role="ADMIN" resource="admin.configuration.attribute" access="VIEW"}
+<div class="row" id="module-attribute-type">
+    <div class="col-md-12 general-block-decorator">
+        <div class="title title-without-tabs">
+            {intl l="Attribute type" d="attributetype.bo.default"}
+        </div>
+        <div class="form-container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="well well-sm">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>
+                                    {intl l="ID"}
+                                </th>
+                                <th>
+                                    ({intl l="Slug" d="attributetype.bo.default"}) - {intl l="Title" d="attributetype.bo.default"}
+                                </th>
+                                <th>
+                                    {intl l="Action" d="attributetype.bo.default"}
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {assign var="exclude_id" value=[]}
+                            {loop type="attribute_type" name="attribute_type" attribute_id=$attribute_id}
+                            {$exclude_id[] = $ID}
+                                <tr>
+                                    <td>
+                                        {$ID}
+                                    </td>
+                                    <td>
+                                        <a href="{url path="/admin/attribute-type/$ID"}">
+                                            ({$SLUG}) - {$TITLE}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm js-action-dissociate" data-action="{url path="/admin/attribute-type/{$ID}/dissociate/{$attribute_id}"}">
+                                            <span class="glyphicon glyphicon-log-out"></span>
+                                            {intl l="Dissociate action" d="attributetype.bo.default"}
+                                        </button>
+                                    </td>
+                                </tr>
+                            {/loop}
+                            {elseloop rel="attribute_type"}
+                                <tr>
+                                    <td colspan="10">
+                                        <div class="alert alert-info">
+                                            {intl l="No attribute type for this attribute" d="attributetype.bo.default"}
+                                        </div>
+                                    </td>
+                                </tr>
+                            {/elseloop}
+                            </tbody>
+                        </table>
+
+                        {ifloop rel='attribute_type_select'}
+                        {form name="attribute_type.associate"}
+                            <form method="POST" class="js-form-associate" action="">
+                                {form_hidden_fields form=$form}
+
+                                {form_field form=$form field='success_url'}
+                                    <input type="hidden" name="{$name}" value="{url path="/admin/configuration/attributes/update" attribute_id=$attribute_id}" />
+                                {/form_field}
+
+                                <div class="input-group">
+                                    <select class="form-control">
+                                        <option value="">{intl l="Select an attribute type" d="attributetype.bo.default"}</option>
+                                        {loop type="attribute_type" name="attribute_type_select" exclude_id=$exclude_id|implode:','}
+                                            <option value="{url path="/admin/attribute-type/{$ID}/associate/{$attribute_id}"}">({$SLUG}) - {$TITLE}</option>
+                                        {/loop}
+                                    </select>
+
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-primary">
+                                            <span class="glyphicon glyphicon-log-in">   </span>
+                                            {intl l="Associate action" d="attributetype.bo.default"}
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        {/form}
+                        {/ifloop}
+                        {elseloop rel="attribute_type_select"}
+                            <div class="alert alert-info">
+                                {intl l="Currently, none of the attributes types are available" d="attributetype.bo.default"}
+                            </div>
+                        {/elseloop}
+                        <span class="help-block">
+                            <a href="{url path="/admin/attribute-type"}">
+                                {intl l="Create a new attribute type" d="attributetype.bo.default"}
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-{if {count name="attribute_type" type="attribute_type" attribute_type=$attribute_type} > 2}12{else}7{/if}">
+                    <div class="well well-sm">
+                        {include file="attribute-type/include/form-meta.html"}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    {form name="attribute_type.dissociate"}
+        <form method="POST" class="js-form-dissociate" action="">
+            {form_hidden_fields form=$form}
+
+            {form_field form=$form field='success_url'}
+                <input type="hidden" name="{$name}" value="{url path="/admin/configuration/attributes/update" attribute_id=$attribute_id}" />
+            {/form_field}
+
+            <div class="modal fade js-modal-dissociate {if $form_error}open{/if}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong class="modal-title text-uppercase">{intl l="Dissociate attribute type" d="attributetype.bo.default"}</strong>
+                        </div>
+                        <div class="modal-body">
+                            {if $form_error}
+                                <div class="alert alert-danger">{$form_error_message}</div>
+                            {/if}
+                            {intl l="Dissociate the attribute with the attribute type ?" d="attributetype.bo.default"}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                {intl l="Close action" d="attributetype.bo.default"}
+                            </button>
+                            <button type="submit" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-ok"></span>
+                                {intl l="Dissociate action" d="attributetype.bo.default"}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    {/form}
+</div>
+{/loop}

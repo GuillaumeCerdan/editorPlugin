@@ -1,0 +1,200 @@
+<script type="text/javascript">
+  "use strict";
+  (function($, $module){
+
+    /*****************************************/
+    /********** Attribute create *************/
+    /*****************************************/
+
+    $module.on('click', '.js-action-create', function(){
+      $module.find('.js-modal-create').modal('show');
+      $module.find('#atcf-has_attribute_av_value').trigger('change');
+      $module.find('#atcf-input_type').trigger('change');
+    });
+
+    // tab
+    $module.on('click', '.js-form-create .nav-tabs a', function(){
+      $(this).parents('.nav-tabs').next('.tab-content')
+              .find('.tab-pane').removeClass('active')
+              .eq($(this).parent('li').index()).addClass('active');
+    });
+
+    $module.on('change', '#atcf-has_attribute_av_value', function(){
+      var $fields = $module.find('.js-modal-create')
+              .find(
+              '#atcf-is_multilingual_attribute_av_value' +
+              ',#atcf-input_type' +
+              ',#atcf-pattern' +
+              ',#atcf-css_class' +
+              ',#atcf-min' +
+              ',#atcf-max' +
+              ',#atcf-step')
+              .parents('.col-md-6');
+
+      if (this.checked) {
+        $fields.removeClass('hide');
+        $module.find('#atcf-input_type').trigger('change');
+      } else {
+        $fields.addClass('hide');
+      }
+    });
+
+    $module.on('change', '#atcf-input_type', function(){
+      var val = $(this).val();
+
+      var $fields = $module.find('.js-modal-create')
+              .find('#atcf-min, #atcf-max, #atcf-step')
+              .parents('.col-md-6');
+
+      var $pattern = $module.find('.js-modal-create #atcf-pattern').parents('.col-md-6');
+
+      if (val == 'text' || val == 'color' || val == 'url' || val == 'textarea' || val == "boolean") {
+        $fields.addClass('hide');
+        if (val == 'textarea' || val == 'boolean' || !$module.find('#atcf-has_attribute_av_value').is(':checked')) {
+          $pattern.addClass('hide');
+        } else {
+          $pattern.removeClass('hide');
+        }
+      } else {
+        $fields.removeClass('hide');
+        $pattern.removeClass('hide');
+      }
+    });
+
+    /*****************************************/
+    /************ Attribute edit *************/
+    /*****************************************/
+
+    $module.on('click', '.js-action-edit', function(){
+      $module.find('.js-form-edit').attr('action', $(this).data('action'));
+      if (typeof this.token === 'undefined' || this.token === true) {
+        this.token = false;
+
+        $.ajax({
+          url: $(this).data('action'),
+          type: 'GET',
+          dataType: 'html',
+          target: this,
+          success: function(html){
+            $module.find('.js-form-edit').html($(html).html());
+            $module.find('.js-modal-edit').modal('show');
+            this.target.token = true;
+          },
+          error: function(xhr, ajaxOptions, thrownError){
+            this.target.token = true;
+            alert(thrownError);
+          }
+        });
+      }
+    });
+
+    // tab
+    $module.on('click', '.js-form-edit .nav-tabs a', function(){
+      $(this).parents('.nav-tabs').next('.tab-content')
+              .find('.tab-pane').removeClass('active')
+              .eq($(this).parent('li').index()).addClass('active');
+    });
+
+    // event listener modal open
+    $module.on('show.bs.modal', '.js-modal-edit', function(){
+      $module.find('#atuf-has_attribute_av_value').trigger('change');
+      $module.find('#atuf-input_type').trigger('change');
+    });
+
+    $module.on('change', '#atuf-has_attribute_av_value', function(){
+      var $fields = $module.find('.js-modal-edit')
+              .find(
+              '#atuf-is_multilingual_attribute_av_value' +
+              ',#atuf-input_type' +
+              ',#atuf-pattern' +
+              ',#atuf-css_class' +
+              ',#atuf-min' +
+              ',#atuf-max' +
+              ',#atuf-step')
+              .parents('.col-md-6');
+
+      if (this.checked) {
+        $fields.removeClass('hide');
+        $module.find('#atuf-input_type').trigger('change');
+      } else {
+        $fields.addClass('hide');
+      }
+    });
+
+    $module.on('change', '#atuf-input_type', function(){
+      var val = $(this).val();
+
+      var $fields = $module.find('.js-modal-edit')
+              .find('#atuf-min, #atuf-max, #atuf-step')
+              .parents('.col-md-6');
+
+      var $pattern = $module.find('.js-modal-edit #atuf-pattern').parents('.col-md-6');
+
+      if (val == 'text' || val == 'color' || val == 'url' || val == 'textarea' || val == "boolean") {
+        $fields.addClass('hide');
+        if (val == 'textarea' || val == 'boolean' || !$module.find('#atuf-has_attribute_av_value').is(':checked')) {
+          $pattern.addClass('hide');
+        } else {
+          $pattern.removeClass('hide');
+        }
+      } else {
+        $fields.removeClass('hide');
+        $pattern.removeClass('hide');
+      }
+    });
+    /*****************************************/
+    /************ Attribute copy *************/
+    /*****************************************/
+
+    $module.on('click', '.js-action-copy', function(){
+      if (typeof this.token === 'undefined' || this.token === true) {
+        this.token = false;
+
+        $.ajax({
+          url: $(this).data('action'),
+          type: 'GET',
+          dataType: 'html',
+          target: this,
+          success: function (html) {
+            $module.find('.js-form-create').html($(html).html());
+            $module.find('.js-modal-create').modal('show');
+            $module.find('#atcf-has_attribute_av_value').trigger('change');
+            $module.find('#atcf-input_type').trigger('change');
+            this.target.token = true;
+          },
+          error: function (xhr, ajaxOptions, thrownError) {
+            this.target.token = true;
+            alert(thrownError);
+          }
+        });
+      }
+    });
+
+    /*****************************************/
+    /*********** Attribute delete ************/
+    /*****************************************/
+
+    $module.on('click', '.js-action-delete', function(){
+      $module.find('.js-modal-delete').modal('show');
+      $module.find('.js-form-delete').attr('action', $(this).data('action'));
+    });
+
+    /*****************************************/
+    /************* Module init ***************/
+    /*****************************************/
+
+    $module.find('.js-popover').popover();
+
+    $module.on('show.bs.modal', '.modal', function(){
+      $module.find('.js-popover').popover('hide');
+    });
+
+    $module.on('submit', 'form', function(){
+      $(this).find('button[type=submit]').html('<span class="glyphicon glyphicon-refresh"></span> {intl l="Please wait ..." d="attributetype.bo.default"}');
+      $module.find('button').attr('disabled', true);
+    });
+
+  }(jQuery, jQuery("#module-attribute-type")));
+</script>
+
+{hook name="attribute-type.configuration-js"}

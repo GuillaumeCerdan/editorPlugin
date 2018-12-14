@@ -1,0 +1,25 @@
+{
+    "name": "thelia/math-tools",
+    "description": "Number management library",
+    "require-dev": {
+        "phpunit/phpunit": "4.1.*"
+    },
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Benjamin Perche",
+            "email": "bperche@openstudio.com"
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Thelia\\Math\\":"src/"
+        }
+    }
+}

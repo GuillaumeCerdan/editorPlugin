@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config xmlns="http://thelia.net/schema/dic/config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
+
+    <loops>
+        <loop name="attribute_type" class="AttributeType\Loop\AttributeTypeLoop" />
+        <loop name="attribute_extend_attribute_type" class="AttributeType\Loop\AttributeExtendLoop" />
+        <loop name="attribute_availability_extend_attribute_type" class="AttributeType\Loop\AttributeAvailabilityExtendLoop" />
+    </loops>
+
+    <forms>
+        <form name="attribute_type.associate" class="AttributeType\Form\AttributeTypeForm" />
+        <form name="attribute_type.dissociate" class="AttributeType\Form\AttributeTypeForm" />
+        <form name="attribute_type.delete" class="AttributeType\Form\AttributeTypeForm" />
+        <form name="attribute_type.create" class="AttributeType\Form\AttributeTypeCreateForm" />
+        <form name="attribute_type.update" class="AttributeType\Form\AttributeTypeUpdateForm" />
+        <form name="attribute_type_av_meta.update" class="AttributeType\Form\AttributeTypeAvMetaUpdateForm" />
+    </forms>
+
+    <hooks>
+        <hook id="attribute.type.edit" class="AttributeType\Hook\AttributeEditHook" scope="request">
+            <tag name="hook.event_listener" event="attribute-edit.bottom" type="back" method="onAttributeEditBottom"/>
+            <tag name="hook.event_listener" event="attribute.edit-js" type="back" method="onAttributeEditJs"/>
+            <argument type="service" id="service_container" />
+        </hook>
+        <hook id="attribute.type.configuration" class="AttributeType\Hook\ConfigurationHook" scope="request">
+            <tag name="hook.event_listener" event="configuration.catalog-top" type="back" method="onConfigurationCatalogTop"/>
+        </hook>
+    </hooks>
+
+    <services>
+        <service id="attribute.type.action" class="AttributeType\Action\AttributeTypeAction" scope="request">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+
+</config>
