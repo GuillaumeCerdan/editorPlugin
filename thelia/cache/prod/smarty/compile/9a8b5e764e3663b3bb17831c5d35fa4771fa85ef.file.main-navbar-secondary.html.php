@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 13:07:17
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 15:32:14
          compiled from "C:\wamp64\www\editorPlugin\thelia\local\modules\HookCustomer\templates\frontOffice\default\main-navbar-secondary.html" */ ?>
-<?php /*%%SmartyHeaderCode:257545c14fc8559f198-05760389%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:112285c151e7e1ea6b3-42070939%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '257545c14fc8559f198-05760389',
+  'nocache_hash' => '112285c151e7e1ea6b3-42070939',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c14fc855baf13_52534647',
+  'unifunc' => 'content_5c151e7e2063e2_09267387',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c14fc855baf13_52534647')) {function content_5c14fc855baf13_52534647($_smarty_tpl) {?><ul class="nav navbar-nav navbar-customer navbar-right">
+<?php if ($_valid && !is_callable('content_5c151e7e2063e2_09267387')) {function content_5c151e7e2063e2_09267387($_smarty_tpl) {?><ul class="nav navbar-nav navbar-customer navbar-right">
     <?php $_smarty_tpl->smarty->_tag_stack[] = array('loop', array('type'=>"auth",'name'=>"customer_info_block",'role'=>"CUSTOMER")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['loop'][0][0]->theliaLoop(array('type'=>"auth",'name'=>"customer_info_block",'role'=>"CUSTOMER"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
 
     <li><a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrlFunction(array('path'=>"/logout"),$_smarty_tpl);?>

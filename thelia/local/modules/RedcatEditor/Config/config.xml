@@ -5,8 +5,10 @@
         xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
 
     <hooks>
-        <hook id="redcateditor.hook.menu" class="RedcatEditor\Hook\MenuHook">
-            <tag name="hook.event_listener" event="main.in-top-menu-items" type="back" method="renderMenuItem" />
+        <hook id="redcateditor.hook.menu" class="RedcatEditor\Hook\RedHook">
+            <tag name="hook.event_listener" active="1" event="main.in-top-menu-items" type="back" method="renderMenuItem" />
+            <tag name="hook.event_listener" active="1" event="main.after-javascript-include" type="front" method="renderScriptLayout" />
         </hook>
+        
     </hooks>
 </config>

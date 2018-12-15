@@ -124,9 +124,9 @@ class Image extends BaseCachedFile implements EventSubscriberInterface
                     }
                 } else {
                     // mode = 'copy'
-                    if (false === @copy($source_file, $originalImagePathInCache)) {
+                    /*if (false === @copy($source_file, $originalImagePathInCache)) {
                         throw new ImageException(sprintf("Failed to copy %s in %s image cache directory", basename($source_file), $subdir));
-                    }
+                    }*/
                 }
             }
 

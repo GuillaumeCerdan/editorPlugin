@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 13:11:36
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 15:37:16
          compiled from "C:\wamp64\www\editorPlugin\thelia\local\modules\RedcatEditor\templates\backOffice\default\redcat.html" */ ?>
-<?php /*%%SmartyHeaderCode:184295c14fd882bd946-94166211%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:118435c151fac3023f4-47848040%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -17,7 +17,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '184295c14fd882bd946-94166211',
+  'nocache_hash' => '118435c151fac3023f4-47848040',
   'function' => 
   array (
   ),
@@ -31,9 +31,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c14fd883623a5_11720078',
+  'unifunc' => 'content_5c151fac39dc53_76223003',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c14fd883623a5_11720078')) {function content_5c14fd883623a5_11720078($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_5c151fac39dc53_76223003')) {function content_5c151fac39dc53_76223003($_smarty_tpl) {?>
 
 
     <?php ob_start();?><?php $_tmp1=ob_get_clean();?><?php ob_start();?><?php $_tmp2=ob_get_clean();?><?php ob_start();?><?php $_tmp3=ob_get_clean();?><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['check_auth'][0][0]->checkAuthFunction(array('role'=>"ADMIN",'resource'=>$_tmp1,'module'=>$_tmp2,'access'=>$_tmp3,'login_tpl'=>"/admin/login"),$_smarty_tpl);?>

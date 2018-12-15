@@ -15,31 +15,23 @@ class RedcatEditorController extends BaseAdminController
         $request = $this->getRequest();
         $content = $request->request->get('content');
 
-        $errors = $this->readFileErrors($file = RedcatEditor::getScriptPath());
-        // If the file
-        if (empty($errors) || (1 === count($errors) && $errors[0] === "file_not_readable")) {
-            $errorMessage = null;
-            try {
+        $file = RedcatEditor::getScriptPath();
 
-                $saveReturn = @file_put_contents($file, $content);
-                if (false === $saveReturn) {
-                    $errorMessage = "An unknown error happened while saving the file";
-                } else {
-                    $this->dispatch(
-                        TheliaEvents::CACHE_CLEAR,
-                        new CacheEvent(THELIA_WEB_DIR."assets")
-                    );
-                }
-            } catch (\Exception $e) {
-                $errorMessage = $e->getMessage();
-            }
-            if (null !== $errorMessage) {
-                $this->getParserContext()->set("error_message", $errorMessage);
-            } else {
-                $this->getParserContext()->set("success", true);
-            }
+        try {
+            @file_put_contents($file, $content);
+            $this->dispatch(
+                TheliaEvents::CACHE_CLEAR,
+                new CacheEvent(THELIA_WEB_DIR."assets")
+            );
+            http_response_code(200); 
+        } catch (\Exception $e) {
+            $errorMessage = $e->getMessage();
+            http_response_code(500);
         }
+
     }
+
+    /*
     protected function readFileErrors($file)
     {
         $errors = array();
@@ -58,5 +50,5 @@ class RedcatEditorController extends BaseAdminController
             $errors[] = "file_is_directory";
         }
         return $errors;
-    }
+    }*/
 }

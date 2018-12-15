@@ -448,6 +448,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->addSubscriberService('thelia.listener.view', 'Thelia\\Core\\EventListener\\ViewListener');
         $instance->addSubscriberService('listener.router', 'Symfony\\Component\\HttpKernel\\EventListener\\RouterListener');
         $instance->addSubscriberService('validators.translator', 'Thelia\\Core\\EventListener\\RequestListener');
+        $instance->addListenerService('hook.1.main.stylesheet', array(0 => 'redcateditor.hook.menu', 1 => 'renderScriptLayout'), 999);
         $instance->addListenerService('hook.1.main.head-bottom', array(0 => 'hooksearch.hook.front', 1 => 'insertTemplate'), 999);
         $instance->addListenerService('hook.1.main.head-bottom', array(0 => 'hookcustomer.hook.front', 1 => 'insertTemplate'), 998);
         $instance->addListenerService('hook.1.main.head-bottom', array(0 => 'hookcart.hook.front', 1 => 'insertTemplate'), 997);
@@ -464,6 +465,9 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->addListenerService('hook.1.main.footer-body', array(0 => 'hooknewsletter.hook.front', 1 => 'onMainFooterBody'), 996);
         $instance->addListenerService('hook.1.main.footer-body', array(0 => 'hooksocial.hook.front', 1 => 'onMainFooterBody'), 995);
         $instance->addListenerService('hook.1.main.footer-bottom', array(0 => 'hooknavigation.hook.front', 1 => 'onMainFooterBottom'), 999);
+        $instance->addListenerService('hook.1.main.after-javascript-include', array(0 => 'redcateditor.hook.menu', 1 => 'renderScriptLayout'), 999);
+        $instance->addListenerService('hook.1.main.javascript-initialization', array(0 => 'redcateditor.hook.menu', 1 => 'renderScriptLayout'), 999);
+        $instance->addListenerService('hook.1.main.body-bottom', array(0 => 'redcateditor.hook.menu', 1 => 'renderScriptLayout'), 999);
         $instance->addListenerService('hook.1.home.body', array(0 => 'hookproductsnew.hook.front', 1 => 'insertTemplate'), 999);
         $instance->addListenerService('hook.1.home.body', array(0 => 'hookproductsoffer.hook.front', 1 => 'insertTemplate'), 998);
         $instance->addListenerService('hook.1.mini-cart', array(0 => 'hookcart.hook.front', 1 => 'insertTemplate'), 999);
@@ -854,7 +858,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     }
     protected function getRedcateditor_Hook_MenuService()
     {
-        $this->services['redcateditor.hook.menu'] = $instance = new \RedcatEditor\Hook\MenuHook();
+        $this->services['redcateditor.hook.menu'] = $instance = new \RedcatEditor\Hook\RedHook();
         $instance->module = $this->get('module.redcateditor');
         $instance->parser = $this->get('thelia.parser');
         $instance->translator = $this->get('thelia.translator');
@@ -1817,6 +1821,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->addTemplateDirectory(1, 'default', ($this->targetDirs[2].'\\local\\modules\\HookProductsOffer\\templates\\frontOffice\\default'), 'HookProductsOffer');
         $instance->addTemplateDirectory(2, 'default', ($this->targetDirs[2].'\\local\\modules\\VirtualProductControl\\templates\\backOffice\\default'), 'VirtualProductControl');
         $instance->addTemplateDirectory(2, 'default', ($this->targetDirs[2].'\\local\\modules\\HookAdminHome\\templates\\backOffice\\default'), 'HookAdminHome');
+        $instance->addTemplateDirectory(1, 'default', ($this->targetDirs[2].'\\local\\modules\\RedcatEditor\\templates\\frontOffice\\default'), 'RedcatEditor');
         $instance->addTemplateDirectory(2, 'default', ($this->targetDirs[2].'\\local\\modules\\RedcatEditor\\templates\\backOffice\\default'), 'RedcatEditor');
         $instance->addPlugins($this->get('smarty.plugin.assets'));
         $instance->addPlugins($this->get('smarty.plugin.format'));
