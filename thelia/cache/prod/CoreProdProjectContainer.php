@@ -63,7 +63,6 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
             'hooksocial.hook.front' => 'getHooksocial_Hook_FrontService',
             'http_kernel' => 'getHttpKernelService',
             'initparam.middleware' => 'getInitparam_MiddlewareService',
-            'intellij.hook.menu' => 'getIntellij_Hook_MenuService',
             'kernel' => 'getKernelService',
             'less.assetic.filter' => 'getLess_Assetic_FilterService',
             'listener.router' => 'getListener_RouterService',
@@ -83,9 +82,10 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
             'module.hookproductsoffer' => 'getModule_HookproductsofferService',
             'module.hooksearch' => 'getModule_HooksearchService',
             'module.hooksocial' => 'getModule_HooksocialService',
-            'module.intellij' => 'getModule_IntellijService',
+            'module.redcateditor' => 'getModule_RedcateditorService',
             'module.theliasmarty' => 'getModule_TheliasmartyService',
             'module.virtualproductcontrol' => 'getModule_VirtualproductcontrolService',
+            'redcateditor.hook.menu' => 'getRedcateditor_Hook_MenuService',
             'request' => 'getRequestService',
             'request.context' => 'getRequest_ContextService',
             'request_stack' => 'getRequestStackService',
@@ -99,9 +99,9 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
             'router.hookanalytics' => 'getRouter_HookanalyticsService',
             'router.hooknavigation' => 'getRouter_HooknavigationService',
             'router.hooksocial' => 'getRouter_HooksocialService',
-            'router.intellij' => 'getRouter_IntellijService',
             'router.module.filelocator' => 'getRouter_Module_FilelocatorService',
             'router.module.xmlloader' => 'getRouter_Module_XmlloaderService',
+            'router.redcateditor' => 'getRouter_RedcateditorService',
             'router.rewrite' => 'getRouter_RewriteService',
             'router.xmlloader' => 'getRouter_XmlloaderService',
             'sass.assetic.filter' => 'getSass_Assetic_FilterService',
@@ -476,7 +476,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->addListenerService('hook.2.module.config-js.12', array(0 => 'hookanalytics.hook.back', 1 => 'insertTemplate'), 999);
         $instance->addListenerService('hook.2.module.config-js.16', array(0 => 'hooksocial.hook.back', 1 => 'insertTemplate'), 998);
         $instance->addListenerService('hook.2.main.head-css', array(0 => 'hookadminhome.hook.css', 1 => 'insertTemplate'), 999);
-        $instance->addListenerService('hook.2.main.in-top-menu-items', array(0 => 'intellij.hook.menu', 1 => 'renderMenuItem'), 999);
+        $instance->addListenerService('hook.2.main.in-top-menu-items', array(0 => 'redcateditor.hook.menu', 1 => 'renderMenuItem'), 999);
         $instance->addListenerService('hook.2.home.block', array(0 => 'hookadminhome.hook.block_sales_statistics', 1 => 'blockSalesStatistics'), 999);
         $instance->addListenerService('hook.2.home.block', array(0 => 'hookadminhome.hook.block_news', 1 => 'blockNews'), 998);
         $instance->addListenerService('hook.2.home.block', array(0 => 'hookadminhome.hook.block_thelia_informations', 1 => 'blockTheliaInformation'), 997);
@@ -728,16 +728,6 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     {
         return $this->services['initparam.middleware'] = new \Thelia\Core\Stack\ParamInitMiddleware($this->get('thelia.url.manager'), $this->get('thelia.translator'), $this->get('event_dispatcher'));
     }
-    protected function getIntellij_Hook_MenuService()
-    {
-        $this->services['intellij.hook.menu'] = $instance = new \IntelliJ\Hook\MenuHook();
-        $instance->module = $this->get('module.intellij');
-        $instance->parser = $this->get('thelia.parser');
-        $instance->translator = $this->get('thelia.translator');
-        $instance->assetsResolver = $this->get('thelia.parser.asset.resolver');
-        $instance->dispatcher = $this->get('event_dispatcher');
-        return $instance;
-    }
     protected function getKernelService()
     {
         throw new RuntimeException('You have requested a synthetic service ("kernel"). The DIC does not know how to construct this service.');
@@ -844,9 +834,9 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->setContainer($this);
         return $instance;
     }
-    protected function getModule_IntellijService()
+    protected function getModule_RedcateditorService()
     {
-        $this->services['module.intellij'] = $instance = new \IntelliJ\IntelliJ();
+        $this->services['module.redcateditor'] = $instance = new \RedcatEditor\RedcatEditor();
         $instance->setContainer($this);
         return $instance;
     }
@@ -860,6 +850,16 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     {
         $this->services['module.virtualproductcontrol'] = $instance = new \VirtualProductControl\VirtualProductControl();
         $instance->setContainer($this);
+        return $instance;
+    }
+    protected function getRedcateditor_Hook_MenuService()
+    {
+        $this->services['redcateditor.hook.menu'] = $instance = new \RedcatEditor\Hook\MenuHook();
+        $instance->module = $this->get('module.redcateditor');
+        $instance->parser = $this->get('thelia.parser');
+        $instance->translator = $this->get('thelia.translator');
+        $instance->assetsResolver = $this->get('thelia.parser.asset.resolver');
+        $instance->dispatcher = $this->get('event_dispatcher');
         return $instance;
     }
     protected function getRequestService()
@@ -904,7 +904,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->add($this->get('router.hooknavigation'), 161);
         $instance->add($this->get('router.hooksocial'), 163);
         $instance->add($this->get('router.hookadminhome'), 168);
-        $instance->add($this->get('router.intellij'), 171);
+        $instance->add($this->get('router.redcateditor'), 171);
         return $instance;
     }
     protected function getRouter_FilelocatorService()
@@ -934,10 +934,6 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     {
         return $this->services['router.hooksocial'] = new \Symfony\Component\Routing\Router($this->get('router.module.xmlloader'), ($this->targetDirs[2].'\\local\\modules\\HookSocial\\Config\\routing.xml'), array('cache_dir' => __DIR__, 'debug' => false, 'matcher_cache_class' => 'ProjectUrlMatcherHookSocial', 'generator_cache_class' => 'ProjectUrlGeneratorHookSocial'), $this->get('request.context'));
     }
-    protected function getRouter_IntellijService()
-    {
-        return $this->services['router.intellij'] = new \Symfony\Component\Routing\Router($this->get('router.module.xmlloader'), ($this->targetDirs[2].'\\local\\modules\\IntelliJ\\Config\\routing.xml'), array('cache_dir' => __DIR__, 'debug' => false, 'matcher_cache_class' => 'ProjectUrlMatcherIntelliJ', 'generator_cache_class' => 'ProjectUrlGeneratorIntelliJ'), $this->get('request.context'));
-    }
     protected function getRouter_Module_FilelocatorService()
     {
         return $this->services['router.module.filelocator'] = new \Symfony\Component\Config\FileLocator(($this->targetDirs[2].'\\local\\modules\\'));
@@ -945,6 +941,10 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     protected function getRouter_Module_XmlloaderService()
     {
         return $this->services['router.module.xmlloader'] = new \Symfony\Component\Routing\Loader\XmlFileLoader($this->get('router.module.filelocator'));
+    }
+    protected function getRouter_RedcateditorService()
+    {
+        return $this->services['router.redcateditor'] = new \Symfony\Component\Routing\Router($this->get('router.module.xmlloader'), ($this->targetDirs[2].'\\local\\modules\\RedcatEditor\\Config\\routing.xml'), array('cache_dir' => __DIR__, 'debug' => false, 'matcher_cache_class' => 'ProjectUrlMatcherRedcatEditor', 'generator_cache_class' => 'ProjectUrlGeneratorRedcatEditor'), $this->get('request.context'));
     }
     protected function getRouter_RewriteService()
     {
@@ -1817,7 +1817,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->addTemplateDirectory(1, 'default', ($this->targetDirs[2].'\\local\\modules\\HookProductsOffer\\templates\\frontOffice\\default'), 'HookProductsOffer');
         $instance->addTemplateDirectory(2, 'default', ($this->targetDirs[2].'\\local\\modules\\VirtualProductControl\\templates\\backOffice\\default'), 'VirtualProductControl');
         $instance->addTemplateDirectory(2, 'default', ($this->targetDirs[2].'\\local\\modules\\HookAdminHome\\templates\\backOffice\\default'), 'HookAdminHome');
-        $instance->addTemplateDirectory(2, 'default', ($this->targetDirs[2].'\\local\\modules\\IntelliJ\\templates\\backOffice\\default'), 'IntelliJ');
+        $instance->addTemplateDirectory(2, 'default', ($this->targetDirs[2].'\\local\\modules\\RedcatEditor\\templates\\backOffice\\default'), 'RedcatEditor');
         $instance->addPlugins($this->get('smarty.plugin.assets'));
         $instance->addPlugins($this->get('smarty.plugin.format'));
         $instance->addPlugins($this->get('smarty.plugin.thelialoop'));

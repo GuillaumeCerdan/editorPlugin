@@ -2502,3 +2502,313 @@
 1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:15:44: Template file worker-javascript.js.html cannot be found.
 1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:15:55: Template file snippets/javascript.js.html cannot be found.
 1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:15:55: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:27:32: Template file snippets/javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:27:32: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:29:46: Template file snippets/javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:29:46: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:30:20: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:31:33: Template file ext-emmet.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:31:33: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:31:51: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:32:27: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:33:54: Template file assets/js/editor.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:34:36: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:34:46: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:37:35: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:38:45: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:38:51: Template file worker-javascript.js.html cannot be found.
+1: ERROR [Thelia.php:loadConfiguration()] {337} 2018-12-15 12:42:57: Failed to load module IntelliJ: The file "config.xml" does not exist (in: C:\wamp64\www\editorPlugin\thelia\local\modules\IntelliJ\Config).
+2: ERROR [Thelia.php:loadConfiguration()] {337} 2018-12-15 12:42:57: The file "config.xml" does not exist (in: C:\wamp64\www\editorPlugin\thelia\local\modules\IntelliJ\Config).
+#0 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\DependencyInjection\Loader\XmlFileLoader.php(64): Symfony\Component\Config\FileLocator->locate('config.xml')
+#1 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Thelia.php(327): Thelia\Core\DependencyInjection\Loader\XmlFileLoader->load('config.xml', 'module.IntelliJ')
+#2 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Thelia.php(499): Thelia\Core\Thelia->loadConfiguration(Object(Thelia\Core\TheliaContainerBuilder))
+#3 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(510): Thelia\Core\Thelia->buildContainer()
+#4 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(133): Symfony\Component\HttpKernel\Kernel->initializeContainer()
+#5 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Thelia.php(219): Symfony\Component\HttpKernel\Kernel->boot()
+#6 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(182): Thelia\Core\Thelia->boot()
+#7 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#8 {main}
+3: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:42:58: Template file intellij.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:47:15: Template file redcat.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 12:47:26: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 13:03:39: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 13:03:49: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 13:05:19: Template file worker-javascript.js.html cannot be found.
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:05:21: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:05:21: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(157) : eval()'d code(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc1106cc04_41055539(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 13:05:33: Template file worker-javascript.js.html cannot be found.
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:05:36: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:05:36: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\cache\prod\smarty\compile\b152699eeb504ac1c6cc7a0a027adad24f8bdd1d.file.index.html.php(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc1106cc04_41055539(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:06:17: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:06:17: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\cache\prod\smarty\compile\b152699eeb504ac1c6cc7a0a027adad24f8bdd1d.file.index.html.php(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc1106cc04_41055539(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:07:17: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:07:17: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(157) : eval()'d code(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc84f407a0_62306058(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:07:41: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:07:41: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\cache\prod\smarty\compile\b152699eeb504ac1c6cc7a0a027adad24f8bdd1d.file.index.html.php(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc84f407a0_62306058(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:08:01: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:08:01: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\cache\prod\smarty\compile\b152699eeb504ac1c6cc7a0a027adad24f8bdd1d.file.index.html.php(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc84f407a0_62306058(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:08:35: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:08:35: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\cache\prod\smarty\compile\b152699eeb504ac1c6cc7a0a027adad24f8bdd1d.file.index.html.php(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc84f407a0_62306058(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:08:48: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:08:48: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\cache\prod\smarty\compile\b152699eeb504ac1c6cc7a0a027adad24f8bdd1d.file.index.html.php(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc84f407a0_62306058(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:09:08: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:09:08: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\cache\prod\smarty\compile\b152699eeb504ac1c6cc7a0a027adad24f8bdd1d.file.index.html.php(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc84f407a0_62306058(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 13:11:37: Template file worker-javascript.js.html cannot be found.
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:11:41: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:11:41: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\cache\prod\smarty\compile\b152699eeb504ac1c6cc7a0a027adad24f8bdd1d.file.index.html.php(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc84f407a0_62306058(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:11:57: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:11:57: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\cache\prod\smarty\compile\b152699eeb504ac1c6cc7a0a027adad24f8bdd1d.file.index.html.php(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc84f407a0_62306058(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [ImageException.php:__construct()] {21} 2018-12-15 13:12:38: Failed to create symbolic link for logo.png in store image cache directory
+2: ERROR [ErrorListener.php:logException()] {109} 2018-12-15 13:12:38: Uncaught exceptionFailed to create symbolic link for logo.png in store image cache directory
+Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#1 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Thelia\Core\Event\Image\ImageEvent), 'action.processI...', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#2 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\DataAccessFunctions.php(903): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('action.processI...', Object(Thelia\Core\Event\Image\ImageEvent))
+#4 C:\wamp64\www\editorPlugin\thelia\cache\prod\smarty\compile\b152699eeb504ac1c6cc7a0a027adad24f8bdd1d.file.index.html.php(251): TheliaSmarty\Template\Plugins\DataAccessFunctions->storeMediaDataAccess(Array, NULL, Object(Smarty_Internal_Template), true)
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c14fc84f407a0_62306058(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:index.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'index.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\EventListener\ViewListener.php(78): TheliaSmarty\Template\SmartyParser->render('index.html')
+#9 [internal function]: Thelia\Core\EventListener\ViewListener->onKernelView(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#10 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(181): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\event-dispatcher\EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(144): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}

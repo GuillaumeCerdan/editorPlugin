@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 11:57:49
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 13:11:36
          compiled from "C:\wamp64\www\editorPlugin\thelia\templates\backOffice\default\includes\main-menu.html" */ ?>
-<?php /*%%SmartyHeaderCode:95505c14ec3dac9090-31822483%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:311575c14fd8882c514-01212710%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '95505c14ec3dac9090-31822483',
+  'nocache_hash' => '311575c14fd8882c514-01212710',
   'function' => 
   array (
   ),
@@ -29,9 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c14ec3dbbbba3_85756207',
+  'unifunc' => 'content_5c14fd888c4832_78928958',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c14ec3dbbbba3_85756207')) {function content_5c14ec3dbbbba3_85756207($_smarty_tpl) {?><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0][0]->processHookFunction(array('name'=>"main.before-top-menu",'location'=>"before_top_menu"),$_smarty_tpl);?>
+<?php if ($_valid && !is_callable('content_5c14fd888c4832_78928958')) {function content_5c14fd888c4832_78928958($_smarty_tpl) {?><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0][0]->processHookFunction(array('name'=>"main.before-top-menu",'location'=>"before_top_menu"),$_smarty_tpl);?>
 
 <ul class="nav in" id="side-menu">
     <li class="sidebar-search">

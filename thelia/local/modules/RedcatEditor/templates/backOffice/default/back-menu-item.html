@@ -1,0 +1,30 @@
+{loop name="menu-auth-redcateditor" type="auth" role="ADMIN" resource="admin.redcateditor" access="VIEW"}
+{ifhook rel="main.top-menu-redcateditor"}
+    {hookblock name="main.top-menu-redcateditor" fields="id,class,url,title"}
+        <li class="{if $admin_current_location == 'redcateditor'}active{/if}" id="config_menu">
+            <a title="Redcat Editor" href="#collapse-redcateditor" {if $admin_current_location == 'redcateditor'}class="open"{/if}>
+                <span class="icon-tools"></span>
+                <span class="item-text">Redcat Editor<span class="caret"></span></span>
+            </a>
+
+            <ul id="collapse-redcateditor" class="collapse {if $admin_current_location == 'redcateditor'}in{/if}" role="menu">
+                {forhook rel="main.top-menu-redcateditor"}
+                    <li role="menuitem">
+                        <a {if $id}id="{$id}" {/if} class="{$class}" data-target="{$url}" href="{$url}">
+                            {$title}
+                        </a>
+                    </li>
+                {/forhook}
+            </ul>
+        </li>
+    {/hookblock}
+{/ifhook}
+{elsehook rel="main.top-menu-redcateditor"}
+    <li class="{if $admin_current_location == 'redcateditor'}active{/if}" id="config_menu">
+        <a title="RedcatEditor" href="{url path='/admin/redcat'}">
+            <span class="icon-tools"></span>
+            <span class="item-text">Redcat Editor</span>
+        </a>
+    </li>
+{/elsehook}
+{/loop}
