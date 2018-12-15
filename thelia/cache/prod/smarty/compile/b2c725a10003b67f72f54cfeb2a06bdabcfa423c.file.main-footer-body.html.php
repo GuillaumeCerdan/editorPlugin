@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 15:32:14
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 16:01:06
          compiled from "C:\wamp64\www\editorPlugin\thelia\local\modules\HookSocial\templates\frontOffice\default\main-footer-body.html" */ ?>
-<?php /*%%SmartyHeaderCode:143545c151e7eca1592-30615748%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:143635c1525428a3c94-78971609%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '143545c151e7eca1592-30615748',
+  'nocache_hash' => '143635c1525428a3c94-78971609',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c151e7ecbb481_28260169',
+  'unifunc' => 'content_5c1525428bd455_89816359',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c151e7ecbb481_28260169')) {function content_5c151e7ecbb481_28260169($_smarty_tpl) {?><ul role="presentation">
+<?php if ($_valid && !is_callable('content_5c1525428bd455_89816359')) {function content_5c1525428bd455_89816359($_smarty_tpl) {?><ul role="presentation">
     <?php ob_start();?><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['config'][0][0]->configDataAccess(array('key'=>"hooksocial_facebook"),$_smarty_tpl);?>
 <?php $_tmp18=ob_get_clean();?><?php if ($_tmp18) {?>
     <li>

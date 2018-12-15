@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 15:32:14
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 16:01:06
          compiled from "C:\wamp64\www\editorPlugin\thelia\local\modules\HookNavigation\templates\frontOffice\default\main-footer-bottom.html" */ ?>
-<?php /*%%SmartyHeaderCode:30435c151e7edc7655-70854713%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:198965c1525429d0da2-86832623%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '30435c151e7edc7655-70854713',
+  'nocache_hash' => '198965c1525429d0da2-86832623',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c151e7edcb396_19204346',
+  'unifunc' => 'content_5c1525429d5c63_81636719',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c151e7edcb396_19204346')) {function content_5c151e7edcb396_19204346($_smarty_tpl) {?><nav class="nav-footer" role="navigation">
+<?php if ($_valid && !is_callable('content_5c1525429d5c63_81636719')) {function content_5c1525429d5c63_81636719($_smarty_tpl) {?><nav class="nav-footer" role="navigation">
     <ul class="list-unstyled list-inline">
         <?php $_smarty_tpl->smarty->_tag_stack[] = array('loop', array('name'=>"footer_links",'type'=>"content",'folder'=>$_smarty_tpl->tpl_vars['bottomFolderId']->value,'limit'=>4)); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['loop'][0][0]->theliaLoop(array('name'=>"footer_links",'type'=>"content",'folder'=>$_smarty_tpl->tpl_vars['bottomFolderId']->value,'limit'=>4), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
 

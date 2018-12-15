@@ -5,7 +5,7 @@ use RedcatEditor\RedcatEditor;
 use Thelia\Controller\Admin\BaseAdminController;
 use Thelia\Core\Event\Cache\CacheEvent;
 use Thelia\Core\Event\TheliaEvents;
-
+use Thelia\Core\HttpFoundation\Response;
 
 class RedcatEditorController extends BaseAdminController
 {
@@ -23,12 +23,20 @@ class RedcatEditorController extends BaseAdminController
                 TheliaEvents::CACHE_CLEAR,
                 new CacheEvent(THELIA_WEB_DIR."assets")
             );
-            http_response_code(200); 
+            return new Response(null, 200);
+
         } catch (\Exception $e) {
             $errorMessage = $e->getMessage();
-            http_response_code(500);
+            return new Response(null, 500);
         }
 
+    }
+
+    public function readAction()
+    {
+        $file = RedcatEditor::getScriptPath();
+
+        return new Response(file_get_contents($file), 200);
     }
 
     /*

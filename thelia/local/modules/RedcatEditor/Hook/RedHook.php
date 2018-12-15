@@ -25,7 +25,6 @@ class RedHook extends BaseHook
 
     public function renderScriptLayout(HookRenderEvent $event)
     {
-        error_log("je passe");
         $event->add($this->render('redcat-js.html'));
     }
 

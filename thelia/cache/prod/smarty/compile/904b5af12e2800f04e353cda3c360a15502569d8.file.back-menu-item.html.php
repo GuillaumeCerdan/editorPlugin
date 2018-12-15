@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 15:37:17
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 16:01:04
          compiled from "C:\wamp64\www\editorPlugin\thelia\local\modules\RedcatEditor\templates\backOffice\default\back-menu-item.html" */ ?>
-<?php /*%%SmartyHeaderCode:296565c151fada935d3-81055117%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:215085c1525409bde43-55325245%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '296565c151fada935d3-81055117',
+  'nocache_hash' => '215085c1525409bde43-55325245',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c151fadaa21f1_19189672',
+  'unifunc' => 'content_5c1525409ce139_40500413',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c151fadaa21f1_19189672')) {function content_5c151fadaa21f1_19189672($_smarty_tpl) {?><?php $_smarty_tpl->smarty->_tag_stack[] = array('loop', array('name'=>"menu-auth-redcateditor",'type'=>"auth",'role'=>"ADMIN",'resource'=>"admin.redcateditor",'access'=>"VIEW")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['loop'][0][0]->theliaLoop(array('name'=>"menu-auth-redcateditor",'type'=>"auth",'role'=>"ADMIN",'resource'=>"admin.redcateditor",'access'=>"VIEW"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+<?php if ($_valid && !is_callable('content_5c1525409ce139_40500413')) {function content_5c1525409ce139_40500413($_smarty_tpl) {?><?php $_smarty_tpl->smarty->_tag_stack[] = array('loop', array('name'=>"menu-auth-redcateditor",'type'=>"auth",'role'=>"ADMIN",'resource'=>"admin.redcateditor",'access'=>"VIEW")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['loop'][0][0]->theliaLoop(array('name'=>"menu-auth-redcateditor",'type'=>"auth",'role'=>"ADMIN",'resource'=>"admin.redcateditor",'access'=>"VIEW"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
 
 <?php $_smarty_tpl->smarty->_tag_stack[] = array('ifhook', array('rel'=>"main.top-menu-redcateditor")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['ifhook'][0][0]->ifHook(array('rel'=>"main.top-menu-redcateditor"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
 

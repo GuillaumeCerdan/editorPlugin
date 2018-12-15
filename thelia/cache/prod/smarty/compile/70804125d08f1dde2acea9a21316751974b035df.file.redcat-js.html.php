@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 15:32:13
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 16:01:05
          compiled from "C:\wamp64\www\editorPlugin\thelia\local\modules\RedcatEditor\templates\frontOffice\default\redcat-js.html" */ ?>
-<?php /*%%SmartyHeaderCode:298725c151e7df2f2f6-83276441%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:92495c15254198bef5-98298534%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '298725c151e7df2f2f6-83276441',
+  'nocache_hash' => '92495c15254198bef5-98298534',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c151e7df328a8_41534780',
+  'unifunc' => 'content_5c15254198f677_09913227',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c151e7df328a8_41534780')) {function content_5c151e7df328a8_41534780($_smarty_tpl) {?><?php $_smarty_tpl->smarty->_tag_stack[] = array('javascripts', array('file'=>"redcat/assets/js/script.js",'source'=>"RedcatEditor")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['javascripts'][0][0]->blockJavascripts(array('file'=>"redcat/assets/js/script.js",'source'=>"RedcatEditor"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+<?php if ($_valid && !is_callable('content_5c15254198f677_09913227')) {function content_5c15254198f677_09913227($_smarty_tpl) {?><?php $_smarty_tpl->smarty->_tag_stack[] = array('javascripts', array('file'=>"redcat/assets/js/script.js",'source'=>"RedcatEditor")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['javascripts'][0][0]->blockJavascripts(array('file'=>"redcat/assets/js/script.js",'source'=>"RedcatEditor"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
 
     <script src="<?php echo TheliaSmarty\Template\SmartyParser::theliaEscape($_smarty_tpl->tpl_vars['asset_url']->value,$_smarty_tpl);?>
 "></script>

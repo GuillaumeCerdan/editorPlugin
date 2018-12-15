@@ -26,19 +26,10 @@
                 Editeur JS
             </div>
 
-            <pre id="ace_editor" style="opacity:0;">
-                function add(x, y) {
-                    var resultString = "Hello, ACE! The result of your math is: ";
-                    var result = x + y;
-                    return resultString + result;
-                }
-                
-                var addResult = add(3, 2);
-                console.log(addResult);
-            </pre>
+            <pre id="ace_editor" style="opacity:0;min-height: 500px;"></pre>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" route-url="{url path='/admin/redcat/save'}" id="saveContent" class="btn btn-success">Sauvegarder</button>
+                    <button type="submit" id="saveContent" class="btn btn-success">Sauvegarder</button>
                 </div>
             </div>
         </div>
@@ -46,6 +37,10 @@
 {/block}
 
 {block name="javascript-initialization"}
+<script>
+     routeUrlSave="{url path='/admin/redcat/save'}";
+     routeUrlRead="{url path='/admin/redcat/read'}";
+</script>
     {javascripts file="assets/js/ace.js" source="RedcatEditor"}
         <script src="{$asset_url}"></script>
     {/javascripts}

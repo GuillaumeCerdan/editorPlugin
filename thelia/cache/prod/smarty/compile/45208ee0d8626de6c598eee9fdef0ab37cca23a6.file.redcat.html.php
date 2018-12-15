@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 15:37:16
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 16:06:24
          compiled from "C:\wamp64\www\editorPlugin\thelia\local\modules\RedcatEditor\templates\backOffice\default\redcat.html" */ ?>
-<?php /*%%SmartyHeaderCode:118435c151fac3023f4-47848040%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:92475c15253fd4d238-87083868%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '45208ee0d8626de6c598eee9fdef0ab37cca23a6' => 
     array (
       0 => 'C:\\wamp64\\www\\editorPlugin\\thelia\\local\\modules\\RedcatEditor\\templates\\backOffice\\default\\redcat.html',
-      1 => 1544879015,
+      1 => 1544889983,
       2 => 'file',
     ),
     '29a482bca58f79cf88b7540ed01fd17bf74e6e8c' => 
@@ -17,10 +17,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '118435c151fac3023f4-47848040',
+  'nocache_hash' => '92475c15253fd4d238-87083868',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.20',
+  'unifunc' => 'content_5c15253fe154a2_46305979',
   'variables' => 
   array (
     'lang_code' => 0,
@@ -30,10 +32,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'TITLE' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c151fac39dc53_76223003',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c151fac39dc53_76223003')) {function content_5c151fac39dc53_76223003($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_5c15253fe154a2_46305979')) {function content_5c15253fe154a2_46305979($_smarty_tpl) {?>
 
 
     <?php ob_start();?><?php $_tmp1=ob_get_clean();?><?php ob_start();?><?php $_tmp2=ob_get_clean();?><?php ob_start();?><?php $_tmp3=ob_get_clean();?><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['check_auth'][0][0]->checkAuthFunction(array('role'=>"ADMIN",'resource'=>$_tmp1,'module'=>$_tmp2,'access'=>$_tmp3,'login_tpl'=>"/admin/login"),$_smarty_tpl);?>
@@ -252,20 +252,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 Editeur JS
             </div>
 
-            <pre id="ace_editor" style="opacity:0;">
-                function add(x, y) {
-                    var resultString = "Hello, ACE! The result of your math is: ";
-                    var result = x + y;
-                    return resultString + result;
-                }
-                
-                var addResult = add(3, 2);
-                console.log(addResult);
-            </pre>
+            <pre id="ace_editor" style="opacity:0;min-height: 500px;"></pre>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" route-url="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrlFunction(array('path'=>'/admin/redcat/save'),$_smarty_tpl);?>
-" id="saveContent" class="btn btn-success">Sauvegarder</button>
+                    <button type="submit" id="saveContent" class="btn btn-success">Sauvegarder</button>
                 </div>
             </div>
         </div>
@@ -362,6 +352,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 
     
+<script>
+     routeUrlSave="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrlFunction(array('path'=>'/admin/redcat/save'),$_smarty_tpl);?>
+";
+     routeUrlRead="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrlFunction(array('path'=>'/admin/redcat/read'),$_smarty_tpl);?>
+";
+</script>
     <?php $_smarty_tpl->smarty->_tag_stack[] = array('javascripts', array('file'=>"assets/js/ace.js",'source'=>"RedcatEditor")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['javascripts'][0][0]->blockJavascripts(array('file'=>"assets/js/ace.js",'source'=>"RedcatEditor"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
 
         <script src="<?php echo TheliaSmarty\Template\SmartyParser::theliaEscape($_smarty_tpl->tpl_vars['asset_url']->value,$_smarty_tpl);?>

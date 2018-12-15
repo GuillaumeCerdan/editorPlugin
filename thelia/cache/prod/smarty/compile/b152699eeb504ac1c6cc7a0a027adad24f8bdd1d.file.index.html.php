@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 15:32:13
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 16:01:05
          compiled from "C:\wamp64\www\editorPlugin\thelia\templates\frontOffice\default\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:272885c151e7da20496-34586081%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:166175c152541331b28-26594455%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -17,7 +17,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '272885c151e7da20496-34586081',
+  'nocache_hash' => '166175c152541331b28-26594455',
   'function' => 
   array (
   ),
@@ -44,9 +44,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c151e7daccb79_51228015',
+  'unifunc' => 'content_5c1525413f7990_47416343',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c151e7daccb79_51228015')) {function content_5c151e7daccb79_51228015($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\wamp64\\www\\editorPlugin\\thelia\\core\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_5c1525413f7990_47416343')) {function content_5c1525413f7990_47416343($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\wamp64\\www\\editorPlugin\\thelia\\core\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.truncate.php';
 ?><!doctype html>
 <!--
  ______   __  __     ______     __         __     ______

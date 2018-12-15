@@ -3622,3 +3622,12 @@ Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Th
 1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 15:20:07: Template file worker-javascript.js.html cannot be found.
 1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 15:29:32: Template file worker-javascript.js.html cannot be found.
 1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 15:37:18: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 15:59:47: Template file redcat/read.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 15:59:48: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 16:01:06: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 16:01:54: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 16:04:25: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 16:04:36: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 16:04:57: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 16:05:47: Template file worker-javascript.js.html cannot be found.
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 16:06:26: Template file worker-javascript.js.html cannot be found.
