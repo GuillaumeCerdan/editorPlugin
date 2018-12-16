@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 16:01:06
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-16 16:47:53
          compiled from "C:\wamp64\www\editorPlugin\thelia\local\modules\HookProductsNew\templates\frontOffice\default\home-body.html" */ ?>
-<?php /*%%SmartyHeaderCode:139135c152542294e64-02973542%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:56505c1681b9a42126-39529292%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '139135c152542294e64-02973542',
+  'nocache_hash' => '56505c1681b9a42126-39529292',
   'function' => 
   array (
   ),
@@ -29,9 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c1525422b15e6_21024814',
+  'unifunc' => 'content_5c1681b9a5e323_09694654',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c1525422b15e6_21024814')) {function content_5c1525422b15e6_21024814($_smarty_tpl) {?><?php $_smarty_tpl->smarty->_tag_stack[] = array('ifloop', array('rel'=>"product_new")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['ifloop'][0][0]->theliaIfLoop(array('rel'=>"product_new"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+<?php if ($_valid && !is_callable('content_5c1681b9a5e323_09694654')) {function content_5c1681b9a5e323_09694654($_smarty_tpl) {?><?php $_smarty_tpl->smarty->_tag_stack[] = array('ifloop', array('rel'=>"product_new")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['ifloop'][0][0]->theliaIfLoop(array('rel'=>"product_new"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
 
 <section id="products-new">
     <div class="products-heading">

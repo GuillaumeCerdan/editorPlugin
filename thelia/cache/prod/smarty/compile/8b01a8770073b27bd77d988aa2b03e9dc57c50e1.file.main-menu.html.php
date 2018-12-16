@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 16:01:04
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-16 16:47:47
          compiled from "C:\wamp64\www\editorPlugin\thelia\templates\backOffice\default\includes\main-menu.html" */ ?>
-<?php /*%%SmartyHeaderCode:307435c1525404104a4-49453636%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:190615c1681b3367577-16278688%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '307435c1525404104a4-49453636',
+  'nocache_hash' => '190615c1681b3367577-16278688',
   'function' => 
   array (
   ),
@@ -29,9 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c1525404b1567_62896731',
+  'unifunc' => 'content_5c1681b34017a1_61391901',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c1525404b1567_62896731')) {function content_5c1525404b1567_62896731($_smarty_tpl) {?><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0][0]->processHookFunction(array('name'=>"main.before-top-menu",'location'=>"before_top_menu"),$_smarty_tpl);?>
+<?php if ($_valid && !is_callable('content_5c1681b34017a1_61391901')) {function content_5c1681b34017a1_61391901($_smarty_tpl) {?><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0][0]->processHookFunction(array('name'=>"main.before-top-menu",'location'=>"before_top_menu"),$_smarty_tpl);?>
 
 <ul class="nav in" id="side-menu">
     <li class="sidebar-search">
@@ -146,13 +146,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <?php $_smarty_tpl->smarty->_tag_stack[] = array('loop', array('name'=>"order-status-list",'type'=>"order-status")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['loop'][0][0]->theliaLoop(array('name'=>"order-status-list",'type'=>"order-status"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
 
                 <?php ob_start();?><?php echo TheliaSmarty\Template\SmartyParser::theliaEscape($_smarty_tpl->tpl_vars['ID']->value,$_smarty_tpl);?>
-<?php $_tmp7=ob_get_clean();?><?php ob_start();?><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['count'][0][0]->theliaCount(array('type'=>"order",'customer'=>"*",'backend_context'=>"1",'status'=>$_tmp7),$_smarty_tpl);?>
-<?php $_tmp8=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['count'] = new Smarty_variable($_tmp8, null, 0);?>
+<?php $_tmp17=ob_get_clean();?><?php ob_start();?><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['count'][0][0]->theliaCount(array('type'=>"order",'customer'=>"*",'backend_context'=>"1",'status'=>$_tmp17),$_smarty_tpl);?>
+<?php $_tmp18=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['count'] = new Smarty_variable($_tmp18, null, 0);?>
                 <?php if ($_smarty_tpl->tpl_vars['count']->value) {?>
                 <li role="menuitem">
                     <a class="clearfix" data-target="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrlFunction(array('path'=>"admin/orders/".((string)$_smarty_tpl->tpl_vars['LABEL']->value)),$_smarty_tpl);?>
 " href="<?php ob_start();?><?php echo TheliaSmarty\Template\SmartyParser::theliaEscape($_smarty_tpl->tpl_vars['ID']->value,$_smarty_tpl);?>
-<?php $_tmp9=ob_get_clean();?><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrlFunction(array('path'=>"admin/orders",'status'=>$_tmp9),$_smarty_tpl);?>
+<?php $_tmp19=ob_get_clean();?><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrlFunction(array('path'=>"admin/orders",'status'=>$_tmp19),$_smarty_tpl);?>
 ">
                         <span class="pull-left"><?php echo TheliaSmarty\Template\SmartyParser::theliaEscape($_smarty_tpl->tpl_vars['TITLE']->value,$_smarty_tpl);?>
 </span>

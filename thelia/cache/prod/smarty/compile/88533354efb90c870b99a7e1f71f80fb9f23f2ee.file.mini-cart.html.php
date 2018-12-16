@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-15 16:01:05
+<?php /* Smarty version Smarty-3.1.20, created on 2018-12-16 16:47:53
          compiled from "C:\wamp64\www\editorPlugin\thelia\local\modules\HookCart\templates\frontOffice\default\mini-cart.html" */ ?>
-<?php /*%%SmartyHeaderCode:306275c152541ee4733-68036432%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:185485c1681b97a20c3-09413350%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '306275c152541ee4733-68036432',
+  'nocache_hash' => '185485c1681b97a20c3-09413350',
   'function' => 
   array (
   ),
@@ -34,9 +34,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c152541f07866_54889024',
+  'unifunc' => 'content_5c1681b97c6802_16614682',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c152541f07866_54889024')) {function content_5c152541f07866_54889024($_smarty_tpl) {?><?php $_smarty_tpl->smarty->_tag_stack[] = array('ifloop', array('rel'=>"cartloop")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['ifloop'][0][0]->theliaIfLoop(array('rel'=>"cartloop"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+<?php if ($_valid && !is_callable('content_5c1681b97c6802_16614682')) {function content_5c1681b97c6802_16614682($_smarty_tpl) {?><?php $_smarty_tpl->smarty->_tag_stack[] = array('ifloop', array('rel'=>"cartloop")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['ifloop'][0][0]->theliaIfLoop(array('rel'=>"cartloop"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
 
     <li class="dropdown pull-right cart-not-empty cart-container">
         <a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrlFunction(array('path'=>"/cart"),$_smarty_tpl);?>

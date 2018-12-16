@@ -3631,3 +3631,26 @@ Stack Trace: #0 [internal function]: Thelia\Action\Image->processImage(Object(Th
 1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 16:04:57: Template file worker-javascript.js.html cannot be found.
 1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 16:05:47: Template file worker-javascript.js.html cannot be found.
 1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-15 16:06:26: Template file worker-javascript.js.html cannot be found.
+1: ERROR [ErrorListener.php:logException()] {109} 2018-12-16 16:40:42: Uncaught exceptionCannot rename "C:\wamp64\www\editorPlugin\thelia\web\assets\backOffice\default\RedcatEditor\assets.tmp" to "C:\wamp64\www\editorPlugin\thelia\web\assets\backOffice\default\RedcatEditor\assets".
+Stack Trace: #0 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Template\Assets\AsseticAssetManager.php(181): Symfony\Component\Filesystem\Filesystem->rename('C:\\wamp64\\www\\e...', 'C:\\wamp64\\www\\e...')
+#1 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Assets\SmartyAssetsManager.php(121): Thelia\Core\Template\Assets\AsseticAssetManager->prepareAssets('C:\\wamp64\\www\\e...', 'C:\\wamp64\\www\\e...', 'backOffice\\defa...', 'RedcatEditor\\as...')
+#2 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Assets\SmartyAssetsManager.php(75): TheliaSmarty\Template\Assets\SmartyAssetsManager->prepareTemplateAssets(Object(Thelia\Core\Template\TemplateDefinition), 'assets', Object(TheliaSmarty\Template\SmartyParser))
+#3 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\Plugins\Assets.php(41): TheliaSmarty\Template\Assets\SmartyAssetsManager->prepareAssets('assets', Object(Smarty_Internal_Template))
+#4 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(157) : eval()'d code(51): TheliaSmarty\Template\Plugins\Assets->declareAssets(Array, Object(Smarty_Internal_Template))
+#5 C:\wamp64\www\editorPlugin\thelia\core\vendor\smarty\smarty\libs\sysplugins\smarty_internal_templatebase.php(188): content_5c168009696708_88338967(Object(Smarty_Internal_Template))
+#6 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(381): Smarty_Internal_TemplateBase->fetch('file:home.html')
+#7 C:\wamp64\www\editorPlugin\thelia\local\modules\TheliaSmarty\Template\SmartyParser.php(424): TheliaSmarty\Template\SmartyParser->internalRenderer('file', 'home.html', Array, true)
+#8 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Controller\Admin\BaseAdminController.php(390): TheliaSmarty\Template\SmartyParser->render('home.html', Array)
+#9 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Controller\Admin\BaseAdminController.php(346): Thelia\Controller\Admin\BaseAdminController->renderRaw('home.html', Array)
+#10 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Controller\Admin\AdminController.php(26): Thelia\Controller\Admin\BaseAdminController->render('home')
+#11 [internal function]: Thelia\Controller\Admin\AdminController->indexAction()
+#12 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(139): call_user_func_array(Array, Array)
+#13 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\HttpKernel.php(62): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Thelia\Core\HttpFoundation\Request), 1)
+#14 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\TheliaHttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#15 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\ParamInitMiddleware.php(87): Thelia\Core\TheliaHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#16 C:\wamp64\www\editorPlugin\thelia\core\lib\Thelia\Core\Stack\SessionMiddleware.php(80): Thelia\Core\Stack\ParamInitMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#17 C:\wamp64\www\editorPlugin\thelia\core\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Thelia\Core\Stack\SessionMiddleware->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#18 C:\wamp64\www\editorPlugin\thelia\core\vendor\symfony\http-kernel\Kernel.php(185): Stack\StackedHttpKernel->handle(Object(Thelia\Core\HttpFoundation\Request), 1, true)
+#19 C:\wamp64\www\editorPlugin\thelia\web\index.php(38): Symfony\Component\HttpKernel\Kernel->handle(Object(Thelia\Core\HttpFoundation\Request))
+#20 {main}
+1: ERROR [BaseAdminController.php:errorPage()] {125} 2018-12-16 16:40:52: Template file worker-javascript.js.html cannot be found.
