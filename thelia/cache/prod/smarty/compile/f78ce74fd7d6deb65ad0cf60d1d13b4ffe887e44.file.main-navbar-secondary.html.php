@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-12-16 16:47:53
+<?php /* Smarty version Smarty-3.1.20, created on 2019-01-26 10:48:44
          compiled from "C:\wamp64\www\editorPlugin\thelia\local\modules\HookSearch\templates\frontOffice\default\main-navbar-secondary.html" */ ?>
-<?php /*%%SmartyHeaderCode:82895c1681b94aa6a7-58446424%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:258915c4c3b0cbb3b07-71423834%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '82895c1681b94aa6a7-58446424',
+  'nocache_hash' => '258915c4c3b0cbb3b07-71423834',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c1681b94b2945_26520350',
+  'unifunc' => 'content_5c4c3b0cbbbda6_17394444',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c1681b94b2945_26520350')) {function content_5c1681b94b2945_26520350($_smarty_tpl) {?><div class="search-container navbar-form navbar-left">
+<?php if ($_valid && !is_callable('content_5c4c3b0cbbbda6_17394444')) {function content_5c4c3b0cbbbda6_17394444($_smarty_tpl) {?><div class="search-container navbar-form navbar-left">
     <form id="form-search" action="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrlFunction(array('path'=>"/search"),$_smarty_tpl);?>
 " method="get" role="search" aria-labelledby="search-label">
         <label id="search-label" class="sr-only" for="q"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['intl'][0][0]->translate(array('l'=>"Search a product",'d'=>"hooksearch.fo.default"),$_smarty_tpl);?>

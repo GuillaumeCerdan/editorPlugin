@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+    <fullnamespace>FedexDelivery\FedexDelivery</fullnamespace>
+    <descriptive locale="en_US">
+        <title>Fedex delivery</title>
+        <description></description>
+    </descriptive>
+    <descriptive locale="fr_FR">
+        <title>Livraison par Fedex</title>
+        <description></description>
+    </descriptive>
+    <version>1.0.0</version>
+    <author>
+        <name>Getup Agency</name>
+        <email>adrien@getup.agency</email>
+    </author>
+    <type>delivery</type>
+    <thelia>2.2.0</thelia>
+    <stability>alpha</stability>
+</module>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database defaultIdMethod="native" name="thelia"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../core/vendor/propel/propel/resources/xsd/database.xsd" >
+    <!--
+    See propel documentation on http://propelorm.org for all information about schema file
+    -->
+    <table name="fedex_ship" namespace="FedexDelivery\Model">
+        <column autoIncrement="true" name="id" primaryKey="true" required="true" type="INTEGER" />
+        <column name="client_id"  type="INTEGER" />
+        <column name="client_date_order" type="DATE" />
+        <column name="order_id" type="LONGVARCHAR" />
+        <column name="fedex_order_id" type="LONGVARCHAR" />
+        <behavior name="versionable">
+            <parameter name="log_created_at" value="true" />
+            <parameter name="log_created_by" value="true" />
+        </behavior>
+    </table>
+
+    <external-schema filename="local/config/schema.xml" referenceOnly="true" />
+</database>

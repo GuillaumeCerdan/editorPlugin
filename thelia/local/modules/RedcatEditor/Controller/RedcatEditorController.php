@@ -38,25 +38,4 @@ class RedcatEditorController extends BaseAdminController
 
         return new Response(file_get_contents($file), 200);
     }
-
-    /*
-    protected function readFileErrors($file)
-    {
-        $errors = array();
-        if ((!is_file($file) && !@touch($file))) {
-            $errors[] = "file_dont_exist";
-        }
-        if (is_file($file)) {
-            if (!is_writable($file)) {
-                $errors[] = "file_readonly";
-            }
-            if (!is_readable($file)) {
-                $errors[] = "file_not_readable";
-            }
-        }
-        if (is_dir($file)) {
-            $errors[] = "file_is_directory";
-        }
-        return $errors;
-    }*/
 }

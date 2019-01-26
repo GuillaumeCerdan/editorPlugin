@@ -437,7 +437,7 @@ class CustomerController extends BaseFrontController
                         /** @var Customer $customer */
                         $customer = $authenticator->getAuthentifiedUser();
 
-                        $this->processLogin($customer);
+                        $this->processLogin($customer); 
 
                         if (intval($form->get('remember_me')->getData()) > 0) {
                             // If a remember me field if present and set in the form, create

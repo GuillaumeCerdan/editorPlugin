@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+    <fullnamespace>SingleCartProduct\SingleCartProduct</fullnamespace>
+    <descriptive locale="en_US">
+        <title>Single cart product</title>
+    </descriptive>
+    <descriptive locale="fr_FR">
+        <title>Panier avec un seul produit</title>
+    </descriptive>
+    <version>1.0.0</version>
+    <author>
+        <name>Getup Agency</name>
+        <email>contact@getup.agency</email>
+    </author>
+    <type>classic</type>
+    <thelia>2.2.0</thelia>
+    <stability>alpha</stability>
+</module>

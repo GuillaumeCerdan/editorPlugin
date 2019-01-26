@@ -38,6 +38,9 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
             'esi' => 'getEsiService',
             'esi_listener' => 'getEsiListenerService',
             'event_dispatcher' => 'getEventDispatcherService',
+            'facebook.login.hook' => 'getFacebook_Login_HookService',
+            'fedex.delivery.order.actions' => 'getFedex_Delivery_Order_ActionsService',
+            'fedex.delivery.sendmail.actions' => 'getFedex_Delivery_Sendmail_ActionsService',
             'fragment.renderer.esi' => 'getFragment_Renderer_EsiService',
             'fragment.renderer.inline' => 'getFragment_Renderer_InlineService',
             'hookadminhome.hook.block_information' => 'getHookadminhome_Hook_BlockInformationService',
@@ -67,6 +70,9 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
             'less.assetic.filter' => 'getLess_Assetic_FilterService',
             'listener.router' => 'getListener_RouterService',
             'mailer' => 'getMailerService',
+            'module.facebooklogin' => 'getModule_FacebookloginService',
+            'module.fedexdelivery' => 'getModule_FedexdeliveryService',
+            'module.freeorder' => 'getModule_FreeorderService',
             'module.front' => 'getModule_FrontService',
             'module.hookadminhome' => 'getModule_HookadminhomeService',
             'module.hookanalytics' => 'getModule_HookanalyticsService',
@@ -82,10 +88,8 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
             'module.hookproductsoffer' => 'getModule_HookproductsofferService',
             'module.hooksearch' => 'getModule_HooksearchService',
             'module.hooksocial' => 'getModule_HooksocialService',
-            'module.redcateditor' => 'getModule_RedcateditorService',
             'module.theliasmarty' => 'getModule_TheliasmartyService',
             'module.virtualproductcontrol' => 'getModule_VirtualproductcontrolService',
-            'redcateditor.hook.menu' => 'getRedcateditor_Hook_MenuService',
             'request' => 'getRequestService',
             'request.context' => 'getRequest_ContextService',
             'request_stack' => 'getRequestStackService',
@@ -93,6 +97,8 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
             'router.admin' => 'getRouter_AdminService',
             'router.api' => 'getRouter_ApiService',
             'router.chainrequest' => 'getRouter_ChainrequestService',
+            'router.facebooklogin' => 'getRouter_FacebookloginService',
+            'router.fedexdelivery' => 'getRouter_FedexdeliveryService',
             'router.filelocator' => 'getRouter_FilelocatorService',
             'router.front' => 'getRouter_FrontService',
             'router.hookadminhome' => 'getRouter_HookadminhomeService',
@@ -101,13 +107,13 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
             'router.hooksocial' => 'getRouter_HooksocialService',
             'router.module.filelocator' => 'getRouter_Module_FilelocatorService',
             'router.module.xmlloader' => 'getRouter_Module_XmlloaderService',
-            'router.redcateditor' => 'getRouter_RedcateditorService',
             'router.rewrite' => 'getRouter_RewriteService',
             'router.xmlloader' => 'getRouter_XmlloaderService',
             'sass.assetic.filter' => 'getSass_Assetic_FilterService',
             'service_container' => 'getServiceContainerService',
             'session.listener' => 'getSession_ListenerService',
             'session.middleware' => 'getSession_MiddlewareService',
+            'single.cart.listener' => 'getSingle_Cart_ListenerService',
             'smart.plugin.form' => 'getSmart_Plugin_FormService',
             'smarty.plugin.adminutilities' => 'getSmarty_Plugin_AdminutilitiesService',
             'smarty.plugin.assets' => 'getSmarty_Plugin_AssetsService',
@@ -448,6 +454,11 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->addSubscriberService('thelia.listener.view', 'Thelia\\Core\\EventListener\\ViewListener');
         $instance->addSubscriberService('listener.router', 'Symfony\\Component\\HttpKernel\\EventListener\\RouterListener');
         $instance->addSubscriberService('validators.translator', 'Thelia\\Core\\EventListener\\RequestListener');
+        $instance->addSubscriberService('fedex.delivery.order.actions', 'FedexDelivery\\Action\\FedexDeliveryAction');
+        $instance->addSubscriberService('fedex.delivery.sendmail.actions', 'FedexDelivery\\Action\\SendMailAction');
+        $instance->addSubscriberService('single.cart.listener', 'SingleCartProduct\\EventListeners\\ListenerManager');
+        $instance->addListenerService('hook.1.login.form-bottom', array(0 => 'facebook.login.hook', 1 => 'renderLoginItem'), 999);
+        $instance->addListenerService('hook.1.login.javascript-initialization', array(0 => 'facebook.login.hook', 1 => 'renderScriptLogin'), 999);
         $instance->addListenerService('hook.1.main.head-bottom', array(0 => 'hooksearch.hook.front', 1 => 'insertTemplate'), 999);
         $instance->addListenerService('hook.1.main.head-bottom', array(0 => 'hookcustomer.hook.front', 1 => 'insertTemplate'), 998);
         $instance->addListenerService('hook.1.main.head-bottom', array(0 => 'hookcart.hook.front', 1 => 'insertTemplate'), 997);
@@ -464,7 +475,6 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->addListenerService('hook.1.main.footer-body', array(0 => 'hooknewsletter.hook.front', 1 => 'onMainFooterBody'), 996);
         $instance->addListenerService('hook.1.main.footer-body', array(0 => 'hooksocial.hook.front', 1 => 'onMainFooterBody'), 995);
         $instance->addListenerService('hook.1.main.footer-bottom', array(0 => 'hooknavigation.hook.front', 1 => 'onMainFooterBottom'), 999);
-        $instance->addListenerService('hook.1.main.after-javascript-include', array(0 => 'redcateditor.hook.menu', 1 => 'renderScriptLayout'), 999);
         $instance->addListenerService('hook.1.home.body', array(0 => 'hookproductsnew.hook.front', 1 => 'insertTemplate'), 999);
         $instance->addListenerService('hook.1.home.body', array(0 => 'hookproductsoffer.hook.front', 1 => 'insertTemplate'), 998);
         $instance->addListenerService('hook.1.mini-cart', array(0 => 'hookcart.hook.front', 1 => 'insertTemplate'), 999);
@@ -477,12 +487,29 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->addListenerService('hook.2.module.config-js.12', array(0 => 'hookanalytics.hook.back', 1 => 'insertTemplate'), 999);
         $instance->addListenerService('hook.2.module.config-js.16', array(0 => 'hooksocial.hook.back', 1 => 'insertTemplate'), 998);
         $instance->addListenerService('hook.2.main.head-css', array(0 => 'hookadminhome.hook.css', 1 => 'insertTemplate'), 999);
-        $instance->addListenerService('hook.2.main.in-top-menu-items', array(0 => 'redcateditor.hook.menu', 1 => 'renderMenuItem'), 999);
         $instance->addListenerService('hook.2.home.block', array(0 => 'hookadminhome.hook.block_sales_statistics', 1 => 'blockSalesStatistics'), 999);
         $instance->addListenerService('hook.2.home.block', array(0 => 'hookadminhome.hook.block_news', 1 => 'blockNews'), 998);
         $instance->addListenerService('hook.2.home.block', array(0 => 'hookadminhome.hook.block_thelia_informations', 1 => 'blockTheliaInformation'), 997);
         $instance->addListenerService('hook.2.main.before-content', array(0 => 'virtualproductcontrol.hook', 1 => 'onMainBeforeContent'), 999);
         return $instance;
+    }
+    protected function getFacebook_Login_HookService()
+    {
+        $this->services['facebook.login.hook'] = $instance = new \FacebookLogin\Hook\FacebookHook();
+        $instance->module = $this->get('module.facebooklogin');
+        $instance->parser = $this->get('thelia.parser');
+        $instance->translator = $this->get('thelia.translator');
+        $instance->assetsResolver = $this->get('thelia.parser.asset.resolver');
+        $instance->dispatcher = $this->get('event_dispatcher');
+        return $instance;
+    }
+    protected function getFedex_Delivery_Order_ActionsService()
+    {
+        return $this->services['fedex.delivery.order.actions'] = new \FedexDelivery\Action\FedexDeliveryAction();
+    }
+    protected function getFedex_Delivery_Sendmail_ActionsService()
+    {
+        return $this->services['fedex.delivery.sendmail.actions'] = new \FedexDelivery\Action\SendMailAction($this->get('mailer'));
     }
     protected function getFragment_Renderer_EsiService()
     {
@@ -745,6 +772,24 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     {
         return $this->services['mailer'] = new \Thelia\Mailer\MailerFactory($this->get('event_dispatcher'), $this->get('thelia.parser'));
     }
+    protected function getModule_FacebookloginService()
+    {
+        $this->services['module.facebooklogin'] = $instance = new \FacebookLogin\FacebookLogin();
+        $instance->setContainer($this);
+        return $instance;
+    }
+    protected function getModule_FedexdeliveryService()
+    {
+        $this->services['module.fedexdelivery'] = $instance = new \FedexDelivery\FedexDelivery();
+        $instance->setContainer($this);
+        return $instance;
+    }
+    protected function getModule_FreeorderService()
+    {
+        $this->services['module.freeorder'] = $instance = new \FreeOrder\FreeOrder();
+        $instance->setContainer($this);
+        return $instance;
+    }
     protected function getModule_FrontService()
     {
         $this->services['module.front'] = $instance = new \Front\Front();
@@ -835,12 +880,6 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->setContainer($this);
         return $instance;
     }
-    protected function getModule_RedcateditorService()
-    {
-        $this->services['module.redcateditor'] = $instance = new \RedcatEditor\RedcatEditor();
-        $instance->setContainer($this);
-        return $instance;
-    }
     protected function getModule_TheliasmartyService()
     {
         $this->services['module.theliasmarty'] = $instance = new \TheliaSmarty\TheliaSmarty();
@@ -851,16 +890,6 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     {
         $this->services['module.virtualproductcontrol'] = $instance = new \VirtualProductControl\VirtualProductControl();
         $instance->setContainer($this);
-        return $instance;
-    }
-    protected function getRedcateditor_Hook_MenuService()
-    {
-        $this->services['redcateditor.hook.menu'] = $instance = new \RedcatEditor\Hook\RedHook();
-        $instance->module = $this->get('module.redcateditor');
-        $instance->parser = $this->get('thelia.parser');
-        $instance->translator = $this->get('thelia.translator');
-        $instance->assetsResolver = $this->get('thelia.parser.asset.resolver');
-        $instance->dispatcher = $this->get('event_dispatcher');
         return $instance;
     }
     protected function getRequestService()
@@ -901,12 +930,21 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->add($this->get('router.api'), 0);
         $instance->add($this->get('router.rewrite'), 255);
         $instance->add($this->get('router.front'), 128);
+        $instance->add($this->get('router.fedexdelivery'), 153);
         $instance->add($this->get('router.hookanalytics'), 158);
         $instance->add($this->get('router.hooknavigation'), 161);
         $instance->add($this->get('router.hooksocial'), 163);
         $instance->add($this->get('router.hookadminhome'), 168);
-        $instance->add($this->get('router.redcateditor'), 171);
+        $instance->add($this->get('router.facebooklogin'), 172);
         return $instance;
+    }
+    protected function getRouter_FacebookloginService()
+    {
+        return $this->services['router.facebooklogin'] = new \Symfony\Component\Routing\Router($this->get('router.module.xmlloader'), ($this->targetDirs[2].'\\local\\modules\\FacebookLogin\\Config\\routing.xml'), array('cache_dir' => __DIR__, 'debug' => false, 'matcher_cache_class' => 'ProjectUrlMatcherFacebookLogin', 'generator_cache_class' => 'ProjectUrlGeneratorFacebookLogin'), $this->get('request.context'));
+    }
+    protected function getRouter_FedexdeliveryService()
+    {
+        return $this->services['router.fedexdelivery'] = new \Symfony\Component\Routing\Router($this->get('router.module.xmlloader'), ($this->targetDirs[2].'\\local\\modules\\FedexDelivery\\Config\\routing.xml'), array('cache_dir' => __DIR__, 'debug' => false, 'matcher_cache_class' => 'ProjectUrlMatcherFedexDelivery', 'generator_cache_class' => 'ProjectUrlGeneratorFedexDelivery'), $this->get('request.context'));
     }
     protected function getRouter_FilelocatorService()
     {
@@ -943,10 +981,6 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     {
         return $this->services['router.module.xmlloader'] = new \Symfony\Component\Routing\Loader\XmlFileLoader($this->get('router.module.filelocator'));
     }
-    protected function getRouter_RedcateditorService()
-    {
-        return $this->services['router.redcateditor'] = new \Symfony\Component\Routing\Router($this->get('router.module.xmlloader'), ($this->targetDirs[2].'\\local\\modules\\RedcatEditor\\Config\\routing.xml'), array('cache_dir' => __DIR__, 'debug' => false, 'matcher_cache_class' => 'ProjectUrlMatcherRedcatEditor', 'generator_cache_class' => 'ProjectUrlGeneratorRedcatEditor'), $this->get('request.context'));
-    }
     protected function getRouter_RewriteService()
     {
         $this->services['router.rewrite'] = $instance = new \Thelia\Core\Routing\RewritingRouter();
@@ -973,6 +1007,10 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     protected function getSession_MiddlewareService()
     {
         return $this->services['session.middleware'] = new \Thelia\Core\Stack\SessionMiddleware($this->get('event_dispatcher'), __DIR__, false, 'prod');
+    }
+    protected function getSingle_Cart_ListenerService()
+    {
+        return $this->services['single.cart.listener'] = new \SingleCartProduct\EventListeners\ListenerManager();
     }
     protected function getSmart_Plugin_FormService()
     {
@@ -1031,7 +1069,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     protected function getSmarty_Plugin_ThelialoopService()
     {
         $this->services['smarty.plugin.thelialoop'] = $instance = new \TheliaSmarty\Template\Plugins\TheliaLoop($this);
-        $instance->setLoopList(array('accessory' => 'Thelia\\Core\\Template\\Loop\\Accessory', 'address' => 'Thelia\\Core\\Template\\Loop\\Address', 'admin' => 'Thelia\\Core\\Template\\Loop\\Admin', 'area' => 'Thelia\\Core\\Template\\Loop\\Area', 'associated_content' => 'Thelia\\Core\\Template\\Loop\\AssociatedContent', 'attribute' => 'Thelia\\Core\\Template\\Loop\\Attribute', 'attribute_availability' => 'Thelia\\Core\\Template\\Loop\\AttributeAvailability', 'attribute_combination' => 'Thelia\\Core\\Template\\Loop\\AttributeCombination', 'auth' => 'Thelia\\Core\\Template\\Loop\\Auth', 'brand' => 'Thelia\\Core\\Template\\Loop\\Brand', 'category' => 'Thelia\\Core\\Template\\Loop\\Category', 'content' => 'Thelia\\Core\\Template\\Loop\\Content', 'country' => 'Thelia\\Core\\Template\\Loop\\Country', 'country-area' => 'Thelia\\Core\\Template\\Loop\\CountryArea', 'state' => 'Thelia\\Core\\Template\\Loop\\State', 'currency' => 'Thelia\\Core\\Template\\Loop\\Currency', 'customer' => 'Thelia\\Core\\Template\\Loop\\Customer', 'feature' => 'Thelia\\Core\\Template\\Loop\\Feature', 'feature-availability' => 'Thelia\\Core\\Template\\Loop\\FeatureAvailability', 'feature_value' => 'Thelia\\Core\\Template\\Loop\\FeatureValue', 'folder' => 'Thelia\\Core\\Template\\Loop\\Folder', 'folder-path' => 'Thelia\\Core\\Template\\Loop\\FolderPath', 'module' => 'Thelia\\Core\\Template\\Loop\\Module', 'hook' => 'Thelia\\Core\\Template\\Loop\\Hook', 'module_hook' => 'Thelia\\Core\\Template\\Loop\\ModuleHook', 'order' => 'Thelia\\Core\\Template\\Loop\\Order', 'order_address' => 'Thelia\\Core\\Template\\Loop\\OrderAddress', 'order_product' => 'Thelia\\Core\\Template\\Loop\\OrderProduct', 'order_product_tax' => 'Thelia\\Core\\Template\\Loop\\OrderProductTax', 'order_coupon' => 'Thelia\\Core\\Template\\Loop\\OrderCoupon', 'order_product_attribute_combination' => 'Thelia\\Core\\Template\\Loop\\OrderProductAttributeCombination', 'order-status' => 'Thelia\\Core\\Template\\Loop\\OrderStatus', 'category-path' => 'Thelia\\Core\\Template\\Loop\\CategoryPath', 'payment' => 'Thelia\\Core\\Template\\Loop\\Payment', 'product' => 'Thelia\\Core\\Template\\Loop\\Product', 'product_sale_elements' => 'Thelia\\Core\\Template\\Loop\\ProductSaleElements', 'profile' => 'Thelia\\Core\\Template\\Loop\\Profile', 'resource' => 'Thelia\\Core\\Template\\Loop\\Resource', 'feed' => 'Thelia\\Core\\Template\\Loop\\Feed', 'title' => 'Thelia\\Core\\Template\\Loop\\Title', 'lang' => 'Thelia\\Core\\Template\\Loop\\Lang', 'category-tree' => 'Thelia\\Core\\Template\\Loop\\CategoryTree', 'folder-tree' => 'Thelia\\Core\\Template\\Loop\\FolderTree', 'cart' => 'Thelia\\Core\\Template\\Loop\\Cart', 'image' => 'Thelia\\Core\\Template\\Loop\\Image', 'document' => 'Thelia\\Core\\Template\\Loop\\Document', 'config' => 'Thelia\\Core\\Template\\Loop\\Config', 'coupon' => 'Thelia\\Core\\Template\\Loop\\Coupon', 'message' => 'Thelia\\Core\\Template\\Loop\\Message', 'delivery' => 'Thelia\\Core\\Template\\Loop\\Delivery', 'product-template' => 'Thelia\\Core\\Template\\Loop\\ProductTemplate', 'template' => 'Thelia\\Core\\Template\\Loop\\Template', 'tax' => 'Thelia\\Core\\Template\\Loop\\Tax', 'tax-rule' => 'Thelia\\Core\\Template\\Loop\\TaxRule', 'tax-rule-country' => 'Thelia\\Core\\Template\\Loop\\TaxRuleCountry', 'serializer' => 'Thelia\\Core\\Template\\Loop\\Serializer', 'archiver' => 'Thelia\\Core\\Template\\Loop\\Archiver', 'import-category' => 'Thelia\\Core\\Template\\Loop\\ImportCategory', 'export-category' => 'Thelia\\Core\\Template\\Loop\\ExportCategory', 'import' => 'Thelia\\Core\\Template\\Loop\\Import', 'export' => 'Thelia\\Core\\Template\\Loop\\Export', 'sale' => 'Thelia\\Core\\Template\\Loop\\Sale', 'module-config' => 'Thelia\\Core\\Template\\Loop\\ModuleConfig', 'product-sale-elements-document' => 'Thelia\\Core\\Template\\Loop\\ProductSaleElementsDocument', 'product-sale-elements-image' => 'Thelia\\Core\\Template\\Loop\\ProductSaleElementsImage'));
+        $instance->setLoopList(array('accessory' => 'Thelia\\Core\\Template\\Loop\\Accessory', 'address' => 'Thelia\\Core\\Template\\Loop\\Address', 'admin' => 'Thelia\\Core\\Template\\Loop\\Admin', 'area' => 'Thelia\\Core\\Template\\Loop\\Area', 'associated_content' => 'Thelia\\Core\\Template\\Loop\\AssociatedContent', 'attribute' => 'Thelia\\Core\\Template\\Loop\\Attribute', 'attribute_availability' => 'Thelia\\Core\\Template\\Loop\\AttributeAvailability', 'attribute_combination' => 'Thelia\\Core\\Template\\Loop\\AttributeCombination', 'auth' => 'Thelia\\Core\\Template\\Loop\\Auth', 'brand' => 'Thelia\\Core\\Template\\Loop\\Brand', 'category' => 'Thelia\\Core\\Template\\Loop\\Category', 'content' => 'Thelia\\Core\\Template\\Loop\\Content', 'country' => 'Thelia\\Core\\Template\\Loop\\Country', 'country-area' => 'Thelia\\Core\\Template\\Loop\\CountryArea', 'state' => 'Thelia\\Core\\Template\\Loop\\State', 'currency' => 'Thelia\\Core\\Template\\Loop\\Currency', 'customer' => 'Thelia\\Core\\Template\\Loop\\Customer', 'feature' => 'Thelia\\Core\\Template\\Loop\\Feature', 'feature-availability' => 'Thelia\\Core\\Template\\Loop\\FeatureAvailability', 'feature_value' => 'Thelia\\Core\\Template\\Loop\\FeatureValue', 'folder' => 'Thelia\\Core\\Template\\Loop\\Folder', 'folder-path' => 'Thelia\\Core\\Template\\Loop\\FolderPath', 'module' => 'Thelia\\Core\\Template\\Loop\\Module', 'hook' => 'Thelia\\Core\\Template\\Loop\\Hook', 'module_hook' => 'Thelia\\Core\\Template\\Loop\\ModuleHook', 'order' => 'Thelia\\Core\\Template\\Loop\\Order', 'order_address' => 'Thelia\\Core\\Template\\Loop\\OrderAddress', 'order_product' => 'Thelia\\Core\\Template\\Loop\\OrderProduct', 'order_product_tax' => 'Thelia\\Core\\Template\\Loop\\OrderProductTax', 'order_coupon' => 'Thelia\\Core\\Template\\Loop\\OrderCoupon', 'order_product_attribute_combination' => 'Thelia\\Core\\Template\\Loop\\OrderProductAttributeCombination', 'order-status' => 'Thelia\\Core\\Template\\Loop\\OrderStatus', 'category-path' => 'Thelia\\Core\\Template\\Loop\\CategoryPath', 'payment' => 'Thelia\\Core\\Template\\Loop\\Payment', 'product' => 'Thelia\\Core\\Template\\Loop\\Product', 'product_sale_elements' => 'Thelia\\Core\\Template\\Loop\\ProductSaleElements', 'profile' => 'Thelia\\Core\\Template\\Loop\\Profile', 'resource' => 'Thelia\\Core\\Template\\Loop\\Resource', 'feed' => 'Thelia\\Core\\Template\\Loop\\Feed', 'title' => 'Thelia\\Core\\Template\\Loop\\Title', 'lang' => 'Thelia\\Core\\Template\\Loop\\Lang', 'category-tree' => 'Thelia\\Core\\Template\\Loop\\CategoryTree', 'folder-tree' => 'Thelia\\Core\\Template\\Loop\\FolderTree', 'cart' => 'Thelia\\Core\\Template\\Loop\\Cart', 'image' => 'Thelia\\Core\\Template\\Loop\\Image', 'document' => 'Thelia\\Core\\Template\\Loop\\Document', 'config' => 'Thelia\\Core\\Template\\Loop\\Config', 'coupon' => 'Thelia\\Core\\Template\\Loop\\Coupon', 'message' => 'Thelia\\Core\\Template\\Loop\\Message', 'delivery' => 'Thelia\\Core\\Template\\Loop\\Delivery', 'product-template' => 'Thelia\\Core\\Template\\Loop\\ProductTemplate', 'template' => 'Thelia\\Core\\Template\\Loop\\Template', 'tax' => 'Thelia\\Core\\Template\\Loop\\Tax', 'tax-rule' => 'Thelia\\Core\\Template\\Loop\\TaxRule', 'tax-rule-country' => 'Thelia\\Core\\Template\\Loop\\TaxRuleCountry', 'serializer' => 'Thelia\\Core\\Template\\Loop\\Serializer', 'archiver' => 'Thelia\\Core\\Template\\Loop\\Archiver', 'import-category' => 'Thelia\\Core\\Template\\Loop\\ImportCategory', 'export-category' => 'Thelia\\Core\\Template\\Loop\\ExportCategory', 'import' => 'Thelia\\Core\\Template\\Loop\\Import', 'export' => 'Thelia\\Core\\Template\\Loop\\Export', 'sale' => 'Thelia\\Core\\Template\\Loop\\Sale', 'module-config' => 'Thelia\\Core\\Template\\Loop\\ModuleConfig', 'product-sale-elements-document' => 'Thelia\\Core\\Template\\Loop\\ProductSaleElementsDocument', 'product-sale-elements-image' => 'Thelia\\Core\\Template\\Loop\\ProductSaleElementsImage', 'fedex' => 'FedexDelivery\\Loop\\TrackLoop'));
         return $instance;
     }
     protected function getSmarty_Plugin_TranslationService()
@@ -1802,6 +1840,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     {
         $this->services['thelia.parser'] = $instance = new \TheliaSmarty\Template\SmartyParser($this->get('request_stack'), $this->get('event_dispatcher'), $this->get('thelia.parser.context'), $this->get('thelia.template_helper'), 'prod', false);
         $instance->addTemplateDirectory(1, 'default', ($this->targetDirs[2].'\\local\\modules\\HookCurrency\\templates\\frontOffice\\default'), 'HookCurrency');
+        $instance->addTemplateDirectory(4, 'default', ($this->targetDirs[2].'\\local\\modules\\FedexDelivery\\templates\\email\\default'), 'FedexDelivery');
         $instance->addTemplateDirectory(1, 'default', ($this->targetDirs[2].'\\local\\modules\\HookLang\\templates\\frontOffice\\default'), 'HookLang');
         $instance->addTemplateDirectory(1, 'default', ($this->targetDirs[2].'\\local\\modules\\HookSearch\\templates\\frontOffice\\default'), 'HookSearch');
         $instance->addTemplateDirectory(1, 'default', ($this->targetDirs[2].'\\local\\modules\\HookCustomer\\templates\\frontOffice\\default'), 'HookCustomer');
@@ -1818,8 +1857,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->addTemplateDirectory(1, 'default', ($this->targetDirs[2].'\\local\\modules\\HookProductsOffer\\templates\\frontOffice\\default'), 'HookProductsOffer');
         $instance->addTemplateDirectory(2, 'default', ($this->targetDirs[2].'\\local\\modules\\VirtualProductControl\\templates\\backOffice\\default'), 'VirtualProductControl');
         $instance->addTemplateDirectory(2, 'default', ($this->targetDirs[2].'\\local\\modules\\HookAdminHome\\templates\\backOffice\\default'), 'HookAdminHome');
-        $instance->addTemplateDirectory(1, 'default', ($this->targetDirs[2].'\\local\\modules\\RedcatEditor\\templates\\frontOffice\\default'), 'RedcatEditor');
-        $instance->addTemplateDirectory(2, 'default', ($this->targetDirs[2].'\\local\\modules\\RedcatEditor\\templates\\backOffice\\default'), 'RedcatEditor');
+        $instance->addTemplateDirectory(1, 'default', ($this->targetDirs[2].'\\local\\modules\\FacebookLogin\\templates\\frontOffice\\default'), 'FacebookLogin');
         $instance->addPlugins($this->get('smarty.plugin.assets'));
         $instance->addPlugins($this->get('smarty.plugin.format'));
         $instance->addPlugins($this->get('smarty.plugin.thelialoop'));
@@ -1898,6 +1936,8 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->addResource('php', ($this->targetDirs[2].'\\local\\modules\\Front\\I18n\\fr_FR.php'), 'fr_FR', 'front');
         $instance->addResource('php', ($this->targetDirs[2].'\\local\\modules\\Front\\I18n\\it_IT.php'), 'it_IT', 'front');
         $instance->addResource('php', ($this->targetDirs[2].'\\local\\modules\\Front\\I18n\\tr_TR.php'), 'tr_TR', 'front');
+        $instance->addResource('php', ($this->targetDirs[2].'\\local\\modules\\FedexDelivery\\I18n\\en_US.php'), 'en_US', 'fedexdelivery');
+        $instance->addResource('php', ($this->targetDirs[2].'\\local\\modules\\FedexDelivery\\I18n\\fr_FR.php'), 'fr_FR', 'fedexdelivery');
         $instance->addResource('php', ($this->targetDirs[2].'\\local\\modules\\HookSearch\\I18n\\frontOffice\\default\\de_DE.php'), 'de_DE', 'hooksearch.fo.default');
         $instance->addResource('php', ($this->targetDirs[2].'\\local\\modules\\HookSearch\\I18n\\frontOffice\\default\\en_US.php'), 'en_US', 'hooksearch.fo.default');
         $instance->addResource('php', ($this->targetDirs[2].'\\local\\modules\\HookSearch\\I18n\\frontOffice\\default\\fr_FR.php'), 'fr_FR', 'hooksearch.fo.default');
@@ -2296,6 +2336,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
                 'module-config' => 'Thelia\\Core\\Template\\Loop\\ModuleConfig',
                 'product-sale-elements-document' => 'Thelia\\Core\\Template\\Loop\\ProductSaleElementsDocument',
                 'product-sale-elements-image' => 'Thelia\\Core\\Template\\Loop\\ProductSaleElementsImage',
+                'fedex' => 'FedexDelivery\\Loop\\TrackLoop',
             ),
             'thelia.parser.filters' => array(
             ),

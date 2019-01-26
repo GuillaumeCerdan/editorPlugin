@@ -119,7 +119,7 @@ class Cart extends BaseAction implements EventSubscriberInterface
                 throw new TheliaProcessException("This item cannot be added to the cart: no matching product sale element was found.");
             }
         } elseif ($append && $cartItem !== null) {
-            $cartItem->addQuantity($quantity)->save();
+            $cartItem->addQuantity($quantity)->save(); 
         }
 
         $event->setCartItem($cartItem);

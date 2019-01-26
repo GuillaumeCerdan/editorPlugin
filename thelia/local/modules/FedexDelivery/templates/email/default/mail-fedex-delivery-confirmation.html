@@ -1,0 +1,15 @@
+{default_translation_domain domain="fedexdelivery.email.default"}
+{default_locale locale={$locale}}
+
+<p>{intl l="Hi,"}</p>
+
+{loop name="order.invoice" type="order" id={$order_id} customer="*" limit="1" backend_context="1"}
+    <p>{intl l="Your order %ref has been shipped. You can access to a parcel’s delivery status ." ref={$REF}}</p>
+
+    <p>{intl l="You can check the status of your order at any time here : <a href='%url'>%url</a>" url={$tracking_url}}</p>
+
+{/loop}
+
+<p>{intl l="Feel free to contact us for any further information."}</p>
+
+<p>{intl l="Best Regards."}</p>

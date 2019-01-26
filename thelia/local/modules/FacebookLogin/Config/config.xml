@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config xmlns="http://thelia.net/schema/dic/config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
+
+    <hooks>
+        <hook id="facebook.login.hook" class="FacebookLogin\Hook\FacebookHook">
+            <tag name="hook.event_listener" active="1" event="login.form-bottom" type="front" method="renderLoginItem" />
+            <tag name="hook.event_listener" active="1" event="login.javascript-initialization" type="front" method="renderScriptLogin" />
+        </hook>
+    </hooks>
+
+        <services>
+        <service id="single.cart.listener" class="SingleCartProduct\EventListeners\ListenerManager" scope="request">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+</config>
