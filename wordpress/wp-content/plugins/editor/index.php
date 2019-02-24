@@ -10,23 +10,25 @@ function test_plugin_setup_menu(){
     add_menu_page('Getup Editor', 'Getup Editor', 'manage_options', 'test-plugin', 'init_editor');
 }
 function init_editor(){
-    $insideCode = 'function foo(items) {
-    var x = "All this is syntax highlighted";
-    return x;
-}';
+    $file = 'C:\wamp64\www\editorPlugin\wordpress\wp-content\plugins\editor\js\editor.js';
+    $previousCode = file_get_contents($file);
+
 
     $css_setup = '<link rel="stylesheet" type="text/css" href="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/css/redcat.css" media="all"/>';
 
     $html_setup = ' <h1 class="mrg-bottom-25">Redcat Editor</h1>
-                    <div id="editor">'.$insideCode.'</div>
-                    <div class="around_save">
-                        <a class="save_btn" href="#">Sauvegarder</a>
-                    </div>';
+                    <div id="editor">'.$previousCode.'</div>
+                    <a class="save_btn pointer">Sauvegarder</a>';
 
     $js_setup = '<script src="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
                 <script src="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/js/function.js" type="text/javascript" charset="utf-8"></script>
     <script>
+
         editor = ace.edit("editor");
+
+        // Enlève le highlight de base
+        editor.clearSelection();
+
         editor.container.style.opacity = "";
         editor.setOptions({
             maxLines: 30,
@@ -48,6 +50,13 @@ function init_editor(){
                 enableBasicAutocompletion: true
             });
         });
+
+        window.onresize = function(event) {
+            editor.resize();
+        };
+        
+        
+
     </script>';
 
 

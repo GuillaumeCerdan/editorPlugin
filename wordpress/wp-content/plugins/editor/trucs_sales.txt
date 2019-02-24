@@ -1,0 +1,5 @@
+-- Les choses sales à refaire
+
+
+-- String en dur pour les liens vers les fichiers
+-- Il faut l'inclure dans la page ce fichier js !!

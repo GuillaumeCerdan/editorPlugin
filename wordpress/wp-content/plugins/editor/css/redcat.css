@@ -9,20 +9,20 @@ a {
     left: 0;*/
     min-height: 400px;
     font-size: 15px;
-}
-.around_save {
-    line-height: 50px;
-    margin-top: 50px;
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
 }
 .save_btn {
-    background-color: red;
+    background-color: #c91f37;
     color: #fff;
-    padding: 5px 30px;
+    padding: 15px 30px;
     position: absolute;
-    right: 15px;
+    right: 7.5%;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 400;
+    margin-top: 30px;
 }
 
 
@@ -30,4 +30,7 @@ a {
 /* Utils */
 .mrg-bottom-25 {
     margin-bottom: 25px !important;
+}
+.pointer {
+    cursor: pointer;
 }
