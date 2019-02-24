@@ -10,56 +10,51 @@ function test_plugin_setup_menu(){
     add_menu_page('Getup Editor', 'Getup Editor', 'manage_options', 'test-plugin', 'init_editor');
 }
 function init_editor(){
-    $insideCode = "
-    function code() { 
-        console.log('Now it is your turn !);  
-    }";
-    /* CSS for the editor */
-    echo'<style>#editor {
-            position: relative;
-            top: 150px;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            width: 95%!important;
-            height: 85vh!important;
-        }</style>';
+    $insideCode = 'function foo(items) {
+    var x = "All this is syntax highlighted";
+    return x;
+}';
 
-    /* HTML for the editor */
-    echo'<div id="editor">
-        '.$insideCode.'
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.2/ace.js" type="text/javascript" charset="utf-8"></script>
-        <script>
-            var editor = ace.edit("editor");
-            editor.setTheme("ace/theme/dracula");
-            editor.setFontSize("15px");
+    $css_setup = '<link rel="stylesheet" type="text/css" href="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/css/redcat.css" media="all"/>';
 
-            // pass options to ace.edit
-            ace.edit(editor, {
-                mode: "ace/mode/javascript",
-                selectionStyle: "text"
-            })
+    $html_setup = ' <h1 class="mrg-bottom-25">Redcat Editor</h1>
+                    <div id="editor">'.$insideCode.'</div>
+                    <div class="around_save">
+                        <a class="save_btn" href="#">Sauvegarder</a>
+                    </div>';
 
-            // use setOptions method to set several options at once
-            editor.setOptions({
-                autoScrollEditorIntoView: true,
-                copyWithEmptySelection: true,
-                highlightActiveLine: true,
-                highlightGutterLine: true,
-                cursorStyle: "smooth",
-                enableMultiselect: true,
-                animatedScroll: true
+    $js_setup = '<script src="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+                <script src="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/js/function.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        editor = ace.edit("editor");
+        editor.container.style.opacity = "";
+        editor.setOptions({
+            maxLines: 30,
+            mode: "ace/mode/javascript",
+            autoScrollEditorIntoView: true,
+            theme: "ace/theme/monokai"
+        });
+        
+        
+        ace.config.loadModule("ace/ext/emmet", function() {
+            ace.require("ace/lib/net").loadScript("https://cloud9ide.github.io/emmet-core/emmet.js", function() {
+                editor.setOption("enableEmmet", true);
             });
+        });
+        
+        ace.config.loadModule("ace/ext/language_tools", function() {
+            editor.setOptions({
+                enableSnippets: true,
+                enableBasicAutocompletion: true
+            });
+        });
+    </script>';
 
-            // use setOptions method
-            editor.setOption("mergeUndoDeltas", "always");
 
-            </script>';
-
-    echo '<h2><a href="https://ace.c9.io/#nav=howto"/>Doc settings Ace</a></h2>';
-    echo '<h2><a href="https://github.com/ajaxorg/ace"/>Leur github</a></h2>';
-    echo '<h2><a href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts"/>Shortcuts par défaut</a></h2>';
+    echo($css_setup);
+    echo($html_setup);
+    echo($js_setup);
+    
 }
  
 // Hook the 'wp_footer' action hook, add the function named 'mfp_Add_Text' to it
