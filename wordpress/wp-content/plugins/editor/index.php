@@ -21,43 +21,7 @@ function init_editor(){
                     <a class="save_btn pointer">Sauvegarder</a>';
 
     $js_setup = '<script src="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-                <script src="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/js/function.js" type="text/javascript" charset="utf-8"></script>
-    <script>
-
-        editor = ace.edit("editor");
-
-        // Enlève le highlight de base
-        editor.clearSelection();
-
-        editor.container.style.opacity = "";
-        editor.setOptions({
-            maxLines: 30,
-            mode: "ace/mode/javascript",
-            autoScrollEditorIntoView: true,
-            theme: "ace/theme/monokai"
-        });
-        
-        
-        ace.config.loadModule("ace/ext/emmet", function() {
-            ace.require("ace/lib/net").loadScript("https://cloud9ide.github.io/emmet-core/emmet.js", function() {
-                editor.setOption("enableEmmet", true);
-            });
-        });
-        
-        ace.config.loadModule("ace/ext/language_tools", function() {
-            editor.setOptions({
-                enableSnippets: true,
-                enableBasicAutocompletion: true
-            });
-        });
-
-        window.onresize = function(event) {
-            editor.resize();
-        };
-        
-        
-
-    </script>';
+                <script src="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/js/function.js" type="text/javascript" charset="utf-8"></script>';
 
 
     echo($css_setup);

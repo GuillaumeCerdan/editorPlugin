@@ -1,7 +1,30 @@
-function foo(items) {
-    var x = "All this is syntax highlighted";
-    console.log(totto);
-    console.log('yooooo');
+function toto() {
+    console.log('youhou');
 }
-
-
+function toto() {
+    console.log('youhou');
+}
+function toto() {
+    console.log('youhou');
+}
+function toto() {
+    console.log('youhou');
+}
+function toto() {
+    console.log('youhou');
+}
+function toto() {
+    console.log('youhou');
+}
+function toto() {
+    console.log('youhou');
+}
+function toto() {
+    console.log('youhou');
+}
+function toto() {
+    console.log('youhou');
+}
+function toto() {
+    console.log('yihiiiiiiiiiii');
+}
