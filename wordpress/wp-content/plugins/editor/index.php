@@ -18,7 +18,8 @@ function init_editor(){
 
     $html_setup = ' <h1 class="mrg-bottom-25">Redcat Editor</h1>
                     <div id="editor">'.$previousCode.'</div>
-                    <a class="save_btn pointer">Sauvegarder</a>';
+                    <a class="save_btn pointer">Sauvegarder</a>
+                    <button class="click">CSS</button>';
 
     $js_setup = '<script src="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
                 <script src="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/js/function.js" type="text/javascript" charset="utf-8"></script>';
