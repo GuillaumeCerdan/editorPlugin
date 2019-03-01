@@ -2,4 +2,3 @@ Les choses sales à refaire
 
 
 -- String en dur pour les liens vers les fichiers
--- Le fichier est inclus mais aussi exécuté en backoffice ><
