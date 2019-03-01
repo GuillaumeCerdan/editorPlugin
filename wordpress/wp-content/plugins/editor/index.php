@@ -9,20 +9,23 @@ add_action('admin_menu','test_plugin_setup_menu');
 function test_plugin_setup_menu(){
     add_menu_page('Getup Editor', 'Getup Editor', 'manage_options', 'test-plugin', 'init_editor');
 }
+
+wp_enqueue_script( 'js', plugin_dir_url( __FILE__ ) . 'js/editor.js', array( 'jquery' ) );
+
 function init_editor(){
-    $file = 'C:\wamp64\www\editorPlugin\wordpress\wp-content\plugins\editor\js\editor.js';
+    $file = plugin_dir_url( __FILE__ ).'js/editor.js';
     $previousCode = file_get_contents($file);
 
 
-    $css_setup = '<link rel="stylesheet" type="text/css" href="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/css/redcat.css" media="all"/>';
+    $css_setup = '<link rel="stylesheet" type="text/css" href="'.plugin_dir_url( __FILE__ ).'css/redcat.css" media="all"/>';
 
     $html_setup = ' <h1 class="mrg-bottom-25">Redcat Editor</h1>
                     <div id="editor">'.$previousCode.'</div>
                     <a class="save_btn pointer">Sauvegarder</a>
                     <button class="click">CSS</button>';
 
-    $js_setup = '<script src="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-                <script src="http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/js/function.js" type="text/javascript" charset="utf-8"></script>';
+    $js_setup = '<script src="'.plugin_dir_url( __FILE__ ).'ace/ace.js" type="text/javascript" charset="utf-8"></script>
+                <script src="'.plugin_dir_url( __FILE__ ).'js/function.js" type="text/javascript" charset="utf-8"></script>';
 
 
     echo($css_setup);
