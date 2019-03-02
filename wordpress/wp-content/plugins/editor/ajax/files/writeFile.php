@@ -2,7 +2,7 @@
 
     if(isset($_POST['insideCode'])) {
         $insideCode = $_POST['insideCode'];
-        $file = plugin_dir_url( __FILE__ ).'js/editor.js';
+        $file = 'C:\wamp64\www\editorPlugin\wordpress\wp-content\plugins\editor\js\editor.js';        
         // Marche pas
         // $file = dirname(__FILE__).'..\..\js\editor.js';
         file_put_contents($file, $insideCode);
