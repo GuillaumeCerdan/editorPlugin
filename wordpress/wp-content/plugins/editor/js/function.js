@@ -83,11 +83,12 @@ jQuery(document).ready(function($) {
         console.log(insideCode);
         // Requête ajax pour uploader le code dans le fichier
         $.ajax({
-            url: "http://localhost/editorPlugin/wordpress/wp-content/plugins/editor/ajax/files/writeFile.php",
+            url: "../wp-content/plugins/editor/ajax/files/writeFile.php",
             type: 'POST',
             data: {'insideCode':insideCode},
             success: function (data) {
                 console.log('File overwritten');
+                
                 alert('Fichier enregistré');
             },
             error: function (e) {
