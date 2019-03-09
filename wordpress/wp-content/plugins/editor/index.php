@@ -13,6 +13,7 @@
 
   function init_editor() {
     include('overlay.php');
+
   }
 
   include('redcatInitialization.php');

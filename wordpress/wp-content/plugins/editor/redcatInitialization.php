@@ -12,7 +12,7 @@
         $wp_admin_bar->add_menu(array(
             'id' => 'directLink',
             'title' => __('<p style="color: #c91f37; font-weight: 500;">Redcat Editor</p>'),
-            'href' => 'http://localhost/editorPlugin/wordpress/wp-admin/admin.php?page=redcat-editor',
+            'href' => admin_url().'admin.php?page=redcat-editor',
             'meta'  => array(
                 'target'=> '_blank',
                 'title' => __('Redcat Editor'),
