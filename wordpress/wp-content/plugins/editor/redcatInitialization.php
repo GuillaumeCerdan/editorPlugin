@@ -3,7 +3,7 @@
     //Setup menu
     add_action('admin_menu','setup_menu');  
     function setup_menu(){
-        add_menu_page('Redcat Editor', 'Redcat Editor', 'manage_options', 'test-plugin', 'init_editor');
+        add_menu_page('Redcat Editor', 'Redcat Editor', 'manage_options', 'redcat-editor', 'init_editor');
     }
 
     //Setup admin top bar
@@ -12,7 +12,7 @@
         $wp_admin_bar->add_menu(array(
             'id' => 'directLink',
             'title' => __('<p style="color: #c91f37; font-weight: 500;">Redcat Editor</p>'),
-            'href' => 'http://localhost/editorPlugin/wordpress/wp-admin/admin.php?page=test-plugin',
+            'href' => 'http://localhost/editorPlugin/wordpress/wp-admin/admin.php?page=redcat-editor',
             'meta'  => array(
                 'target'=> '_blank',
                 'title' => __('Redcat Editor'),

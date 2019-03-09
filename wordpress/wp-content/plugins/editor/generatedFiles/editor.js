@@ -14,4 +14,4 @@ function toto(arr1, arr2) {
     }
 }
 
-toto([4, 4, 4, 4], [4, 4, 4]);qsdczad
+toto([4, 4, 4, 4], [4, 4, 4]);

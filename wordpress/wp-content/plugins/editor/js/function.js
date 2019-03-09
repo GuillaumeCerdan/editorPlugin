@@ -81,14 +81,15 @@ jQuery(document).ready(function($) {
         })*/
         let insideCode = editor.getSession().getValue();
         console.log(insideCode);
+        let path = 'toto';
         // Requête ajax pour uploader le code dans le fichier
         $.ajax({
             url: "../wp-content/plugins/editor/ajax/files/writeFile.php",
             type: 'POST',
-            data: {'insideCode':insideCode},
+            data: {'insideCode':insideCode, 'path':path},
             success: function (data) {
                 console.log('File overwritten');
-                
+                console.log(data);
                 alert('Fichier enregistré');
             },
             error: function (e) {
