@@ -1,0 +1,2 @@
+-- Editeur dans une popup
+-- Fullscreen
