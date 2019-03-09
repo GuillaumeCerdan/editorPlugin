@@ -11,8 +11,8 @@
         </hook>
     </hooks>
 
-        <services>
-        <service id="single.cart.listener" class="SingleCartProduct\EventListeners\ListenerManager" scope="request">
+    <services>
+        <service id="facebook.login.logout" class="FacebookLogin\EventListeners\ListenerManager" scope="request">
             <tag name="kernel.event_subscriber"/>
         </service>
     </services>

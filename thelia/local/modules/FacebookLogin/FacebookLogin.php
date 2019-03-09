@@ -11,14 +11,13 @@ class FacebookLogin extends BaseModule
 {
     const MESSAGE_DOMAIN = "facebookLogin";
 
-    private static function getFBConst (){
+    private static function getFBConst(){
         $app_clientId = "371201160320541";
         $app_clientSecret = "73393528dba1ab8cd0ffb7afd1cb1fc1";
         return array("appId"=>$app_clientId, "appSecret"=>$app_clientSecret);
     }
 
-    public static function getScriptPath()
-    {
+    public static function getScriptPath(){
         return __DIR__.DS."templates".DS."frontOffice".DS."default".DS.
             "facebooklogin".DS."assets".DS."js".DS."script.js";
     }
@@ -35,8 +34,10 @@ class FacebookLogin extends BaseModule
     }
 
     public static function logout(){
-        $fb = FacebookLogin::getFB();
-        $fb->getLogoutUrl();
+        //get stored data in table, custom <=> accessToken
+        //Update this token after login/create customer
+
+        //logout user from sdk
     }
 
     public static function facebookProcess($accessToken){

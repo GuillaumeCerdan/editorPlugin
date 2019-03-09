@@ -18,7 +18,7 @@ class ListenerManager implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            TheliaEvents::CUSTOMER_LOGOUT => ['customerLogout', 129],
+            TheliaEvents::CUSTOMER_LOGOUT => ['customerLogout', 127],
         ];
     }
 }

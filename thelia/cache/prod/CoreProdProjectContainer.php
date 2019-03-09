@@ -39,6 +39,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
             'esi_listener' => 'getEsiListenerService',
             'event_dispatcher' => 'getEventDispatcherService',
             'facebook.login.hook' => 'getFacebook_Login_HookService',
+            'facebook.login.logout' => 'getFacebook_Login_LogoutService',
             'fedex.delivery.order.actions' => 'getFedex_Delivery_Order_ActionsService',
             'fedex.delivery.sendmail.actions' => 'getFedex_Delivery_Sendmail_ActionsService',
             'fragment.renderer.esi' => 'getFragment_Renderer_EsiService',
@@ -113,7 +114,6 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
             'service_container' => 'getServiceContainerService',
             'session.listener' => 'getSession_ListenerService',
             'session.middleware' => 'getSession_MiddlewareService',
-            'single.cart.listener' => 'getSingle_Cart_ListenerService',
             'smart.plugin.form' => 'getSmart_Plugin_FormService',
             'smarty.plugin.adminutilities' => 'getSmarty_Plugin_AdminutilitiesService',
             'smarty.plugin.assets' => 'getSmarty_Plugin_AssetsService',
@@ -456,7 +456,7 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->addSubscriberService('validators.translator', 'Thelia\\Core\\EventListener\\RequestListener');
         $instance->addSubscriberService('fedex.delivery.order.actions', 'FedexDelivery\\Action\\FedexDeliveryAction');
         $instance->addSubscriberService('fedex.delivery.sendmail.actions', 'FedexDelivery\\Action\\SendMailAction');
-        $instance->addSubscriberService('single.cart.listener', 'SingleCartProduct\\EventListeners\\ListenerManager');
+        $instance->addSubscriberService('facebook.login.logout', 'FacebookLogin\\EventListeners\\ListenerManager');
         $instance->addListenerService('hook.1.login.form-bottom', array(0 => 'facebook.login.hook', 1 => 'renderLoginItem'), 999);
         $instance->addListenerService('hook.1.login.javascript-initialization', array(0 => 'facebook.login.hook', 1 => 'renderScriptLogin'), 999);
         $instance->addListenerService('hook.1.main.head-bottom', array(0 => 'hooksearch.hook.front', 1 => 'insertTemplate'), 999);
@@ -502,6 +502,10 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
         $instance->assetsResolver = $this->get('thelia.parser.asset.resolver');
         $instance->dispatcher = $this->get('event_dispatcher');
         return $instance;
+    }
+    protected function getFacebook_Login_LogoutService()
+    {
+        return $this->services['facebook.login.logout'] = new \FacebookLogin\EventListeners\ListenerManager();
     }
     protected function getFedex_Delivery_Order_ActionsService()
     {
@@ -1007,10 +1011,6 @@ class CoreProdProjectContainer extends \Thelia\Core\DependencyInjection\TheliaCo
     protected function getSession_MiddlewareService()
     {
         return $this->services['session.middleware'] = new \Thelia\Core\Stack\SessionMiddleware($this->get('event_dispatcher'), __DIR__, false, 'prod');
-    }
-    protected function getSingle_Cart_ListenerService()
-    {
-        return $this->services['single.cart.listener'] = new \SingleCartProduct\EventListeners\ListenerManager();
     }
     protected function getSmart_Plugin_FormService()
     {

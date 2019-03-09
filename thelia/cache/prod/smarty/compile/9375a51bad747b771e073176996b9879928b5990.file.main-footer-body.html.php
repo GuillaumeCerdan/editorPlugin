@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2019-01-26 10:48:45
+<?php /* Smarty version Smarty-3.1.20, created on 2019-01-26 16:57:09
          compiled from "C:\wamp64\www\editorPlugin\thelia\local\modules\HookNewsletter\templates\frontOffice\default\main-footer-body.html" */ ?>
-<?php /*%%SmartyHeaderCode:289455c4c3b0d61a9a4-86970104%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:71615c4c9165300877-25421014%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '289455c4c3b0d61a9a4-86970104',
+  'nocache_hash' => '71615c4c9165300877-25421014',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5c4c3b0d625d13_56266989',
+  'unifunc' => 'content_5c4c916530bab7_80293313',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5c4c3b0d625d13_56266989')) {function content_5c4c3b0d625d13_56266989($_smarty_tpl) {?><p id="newsletter-describe"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['intl'][0][0]->translate(array('l'=>"Sign up to receive our latest news.",'d'=>"hooknewsletter.fo.default"),$_smarty_tpl);?>
+<?php if ($_valid && !is_callable('content_5c4c916530bab7_80293313')) {function content_5c4c916530bab7_80293313($_smarty_tpl) {?><p id="newsletter-describe"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['intl'][0][0]->translate(array('l'=>"Sign up to receive our latest news.",'d'=>"hooknewsletter.fo.default"),$_smarty_tpl);?>
 </p>
 <?php $_smarty_tpl->smarty->_tag_stack[] = array('form', array('name'=>"thelia.front.newsletter")); $_block_repeat=true; echo $_smarty_tpl->smarty->registered_plugins['block']['form'][0][0]->generateForm(array('name'=>"thelia.front.newsletter"), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
 
