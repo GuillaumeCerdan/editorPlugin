@@ -9,17 +9,23 @@ jQuery(document).ready(function($) {
     function initAce() {
         editor = ace.edit("editor");
 
-        /*var EditSession = require("ace/edit_session").EditSession;
-        var js = new EditSession('js');
-        var css = new EditSession('css');
+        var EditSession = require("ace/edit_session").EditSession;
+
+        var css_code = getAllCode('css');
+        var js_code = getAllCode('js');
+
+        var css = new EditSession(css_code[0]);
+        var js = new EditSession(js_code[0]);
 
         // Session setter
-        editor.setSession(js);*/
+        editor.setSession(js);
 
         // Enlève le highlight de base
         editor.clearSelection();
 
         editor.container.style.opacity = "";
+
+        // Set l'éditeur sur JS
         editor.setOptions({
             maxLines: 30,
             mode: "ace/mode/javascript",
@@ -27,6 +33,7 @@ jQuery(document).ready(function($) {
             theme: "ace/theme/monokai"
         });
         
+        // Commandes custom
         editor.commands.addCommand({
             name: 'Save',
             bindKey: {win: 'Ctrl-s',  mac: 'Command-s'},
@@ -36,12 +43,14 @@ jQuery(document).ready(function($) {
             readOnly: true // false if this command should not apply in readOnly mode
         });
         
+        // Lien fichier emmet
         ace.config.loadModule("ace/ext/emmet", function() {
             ace.require("ace/lib/net").loadScript("https://cloud9ide.github.io/emmet-core/emmet.js", function() {
                 editor.setOption("enableEmmet", true);
             });
         });
         
+        // Language tools
         ace.config.loadModule("ace/ext/language_tools", function() {
             editor.setOptions({
                 enableSnippets: true,
@@ -49,10 +58,28 @@ jQuery(document).ready(function($) {
             });
         });
 
+
+        
         // CHANGE SESSION
-        $('.click').click(function() {
-            //editor.setSession(css);
+        $('.click_css').click(function() {
+            editor.setSession(css);
+            editor.setOptions({
+                maxLines: 30,
+                mode: "ace/mode/css",
+                autoScrollEditorIntoView: true,
+                theme: "ace/theme/monokai"
+            });
         });
+        $('.click_js').click(function() {
+            editor.setSession(js);
+            editor.setOptions({
+                maxLines: 30,
+                mode: "ace/mode/javascript",
+                autoScrollEditorIntoView: true,
+                theme: "ace/theme/monokai"
+            });
+        });
+
 
 
         // A voir plus tard
@@ -68,25 +95,18 @@ jQuery(document).ready(function($) {
     }
 
     function saveData() {
-        /*let editor_line = $('.ace_layer.ace_text-layer .ace_line');
-        let insideCode = '';
-        editor_line.each(function(el, idx) {
-            // Filtrage pour CTRL + SPACE
-            if ($(this).children().hasClass('ace_completion-highlight')) {
-                $(this).remove();
-            }
-            else {
-                insideCode += $(this).text() + '\n';
-            }
-        })*/
+        let option = editor.getOption('mode').split('/');
+        let mode = option[option.length -1];
+
+
         let insideCode = editor.getSession().getValue();
+        
         console.log(insideCode);
-        let path = 'toto';
         // Requête ajax pour uploader le code dans le fichier
         $.ajax({
             url: "../wp-content/plugins/editor/ajax/files/writeFile.php",
             type: 'POST',
-            data: {'insideCode':insideCode, 'path':path},
+            data: {'insideCode':insideCode, 'mode':mode},
             success: function (data) {
                 console.log('File overwritten');
                 console.log(data);
@@ -98,4 +118,21 @@ jQuery(document).ready(function($) {
         });
     }
 
+    function getAllCode(extension) {
+       
+        let codejs = $('.redcat-hidden-data-js').text();
+        let codecss = $('.redcat-hidden-data-css').text();
+        let array_code_js = codejs.split('OTHER FILE');
+        let array_code_css = codecss.split('OTHER FILE');
+
+        if (extension == 'js') {
+            return array_code_js;
+        }
+        else if(extension == 'css') {
+            return array_code_css;
+        }
+        else {
+            return 'NO DATA';
+        }
+    }
 });
